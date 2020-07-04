@@ -7,14 +7,8 @@ Vue.use(VueRouter)
   {
     path: '/',
     beforeEnter: (to, from, next) => {
-      var status = sessionStorage.getItem("login");
-      if(status === 'y'){
-        next('/layout')
-      }else{
-        next('/login')  
-      }
-      
-      
+      let status = sessionStorage.getItem("login");
+      status == 'y' ? next('/layout') : next('/login');
     }
   },
   {
@@ -22,14 +16,8 @@ Vue.use(VueRouter)
     name:'login',
     component:()=>import('@/views/login'),
     beforeEnter: (to, from, next) => {
-      var status = sessionStorage.getItem("login");
-      if(status === 'y'){
-        next('/layout')
-      }else{
-        next()  
-      }
-      
-      
+      let status = sessionStorage.getItem("login");
+      status == 'y' ? next('/layout') : next();
     }
   },
   {
