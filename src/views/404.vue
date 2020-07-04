@@ -1,6 +1,6 @@
 <template>
-   <div>
-404
+   <div style="width:100%; height:100%; overflow:hidden;">
+      <img src="@/assets/images/error/404.gif" style="height:100%;">
    </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
