@@ -6,8 +6,16 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    redirect:'/login',
-  
+    beforeEnter: (to, from, next) => {
+      
+      if(status === 'y'){
+        next('/layout')
+      }else{
+        next('/layout')  
+      }
+      
+      
+    }
   },
   {
     path:'/login',
