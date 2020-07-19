@@ -68,12 +68,15 @@ $color:#1282c5;
    }
 
    .ctain{
-      width:350px; 
+      width:400px; 
       height:auto;
       position:absolute;
       top:50%;
       right: 8%;
       transform: translate(0,-50%);
+      padding:30px;
+      border:2px solid #072764;
+      background: rgba(0,0,0,0.2);
    }
 
    .title{
