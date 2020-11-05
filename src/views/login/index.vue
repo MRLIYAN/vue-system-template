@@ -39,7 +39,7 @@ export default {
    },
    methods: {
       login(){
-         sessionStorage.setItem("login",'y');
+         localStorage.setItem("login",'y');
          this.$router.push({
             path:'/layout',
          })
