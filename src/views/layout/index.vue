@@ -3,7 +3,7 @@
        <div class="top">
            <div class="top-left">
                <img class="logo" src="" alt="">
-               <h1 class="name">某某某信息管理系统</h1>
+               <!-- <h1 class="name">某某某信息管理系统</h1> -->
            </div>
            <div class="top-right">
               
@@ -14,15 +14,18 @@
 
            </div>
            <div class="right-cont">
-
+               <eleform />
            </div>
        </div>
    </div>
 </template>
 
 <script>
+import eleform from '@/eleform';
 export default {
-   
+   components:{
+       eleform,
+   }
 }
 </script>
 

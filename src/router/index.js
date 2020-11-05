@@ -46,11 +46,4 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-
-// router.onError(callback=>{
-//   router.push({path:'/404'})
-//   throw new Error(callback);
-// })
-
-
 export default router
