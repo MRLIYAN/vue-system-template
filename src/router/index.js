@@ -1,35 +1,63 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import layout from '@/views/layout'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
-    beforeEnter: (to, from, next) => {
-      let status = localStorage.getItem("login");
-      status == 'y' ? next('/layout') : next('/login');
+    component:layout,
+    redirect:'/layout',
+    meta:{
+      hidden:"true",
     }
   },
   {
     path:'/login',
     name:'login',
     component:()=>import('@/views/login'),
-    beforeEnter: (to, from, next) => {
-      let status = localStorage.getItem("login");
-      status == 'y' ? next('/layout') : next();
+    meta:{
+      hidden:"true",
     }
   },
   {
     path:'/layout',
     name:'layout',
-    component:()=>import('@/views/layout')
+    component:()=>import('@/views/layout'),
+    meta:{
+      hidden:'true'
+    }
+  },
+  {
+    path:'/ele',
+    name:'ele',
+    component:layout,
+    redirect:'/ele/eleform',
+    meta:{
+      hidden:"true"
+    },
+    children:[
+      {
+        path:'eleform',
+        name:'eleform',
+        component:()=>import('@/eleform'),
+      }
+    ]
   },
   {
     path:'/404',
     name:'404',
-    component:()=>import('@/views/404')
+    component:()=>import('@/views/404'),
+    meta:{
+      hidden:"true"
+    }
+  },
+  {
+    path:'*',
+    redirect:'/404',
   }
+  
 ]
 
 const router = new VueRouter({
@@ -38,12 +66,5 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.length === 0) {//如果未匹配到路由
-    from.name ? next({ name:from.name}) : next('/404'); //如果上级也未匹配到路由则跳转登录页面，如果上级能匹配到则转上级路由
-  } else {
-    next(); //如果匹配到正确跳转
-  }
-});
-
 export default router
+

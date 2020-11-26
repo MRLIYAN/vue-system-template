@@ -19,12 +19,15 @@
       </div>
 
       <canvas id="stars"></canvas>
-      <img id="moon" src="@/assets/images/login/moon2.png" alt="">
+      <!-- <img id="moon" src="@/assets/images/login/moon2.png" alt=""> -->
    </div>
 </template>
 
 <script>
 import load from "@/assets/js/liuxing.js"
+import {dealRoute} from '@/utils/menu.js'
+
+import {setToken} from '@/utils/user.js'
 export default {
    data(){
       return {
@@ -39,9 +42,18 @@ export default {
    },
    methods: {
       login(){
-         localStorage.setItem("login",'y');
-         this.$router.push({
-            path:'/layout',
+
+         this.$reqdata({
+            method: 'get',
+            url: 'user.json'
+         }).then(res => {
+            let menu = dealRoute(res.result.menu);
+            this.$store.dispatch('router/addMenu',menu);
+            console.log(this.$store.state.router.routes)
+            this.$router.addRoutes(menu);
+            sessionStorage.setItem("router",JSON.stringify(menu))
+            setToken(res.result.user.token);
+            this.$router.push('/')
          })
       }
    },

@@ -11,20 +11,23 @@
        </div>
        <div class="bottom">
            <div class="left-nav">
-
+               <slide-menu />
            </div>
            <div class="right-cont">
-               <eleform />
+                <transition>
+                   <router-view></router-view>
+                </transition>
+                
            </div>
        </div>
    </div>
 </template>
 
 <script>
-import eleform from '@/eleform';
+import slideMenu from './components/menu'
 export default {
    components:{
-       eleform,
+       slideMenu
    }
 }
 </script>
