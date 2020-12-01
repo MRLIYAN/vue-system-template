@@ -14,7 +14,7 @@
                <slide-menu />
            </div>
            <div class="right-cont">
-                <transition>
+                <transition name="fade-slide" mode="out-in">
                    <router-view></router-view>
                 </transition>
                 
@@ -87,6 +87,13 @@ $color:#fff;
     .logo{
         display: inline-block;
         height: 50px;
+    }
+
+    .fade-slide-enter,.fade-slide-leave-to{
+        transform: translateX(100%);
+    }
+    .fade-slide-enter-active,.fade-sldie-leave-active{
+        transition: all .5s ease;
     }
 }
 </style>
