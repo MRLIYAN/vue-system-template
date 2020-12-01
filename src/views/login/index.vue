@@ -25,9 +25,8 @@
 
 <script>
 import load from "@/assets/js/liuxing.js"
-import {dealRoute} from '@/utils/menu.js'
 
-import {setToken} from '@/utils/user.js'
+
 export default {
    data(){
       return {
@@ -42,19 +41,16 @@ export default {
    },
    methods: {
       login(){
-
-         this.$reqdata({
-            method: 'get',
-            url: 'user.json'
-         }).then(res => {
-            let menu = dealRoute(res.result.menu);
-            this.$store.dispatch('router/addMenu',menu);
-            console.log(this.$store.state.router.routes)
-            this.$router.addRoutes(menu);
-            sessionStorage.setItem("router",JSON.stringify(menu))
-            setToken(res.result.user.token);
+         let param = {
+            userName:this.loginmsg.username,
+            password:this.loginmsg.password
+         }
+         this.$store.dispatch('user/login',param).then(() => {
+            console.log(this.$store.state.router.routes);
+            //this.$router.addRoutes(this.$store.state.router.routes);
             this.$router.push('/')
          })
+        
       }
    },
 }

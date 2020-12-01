@@ -1,3 +1,4 @@
+import request from '@/api/req.js'
 import VueCookies from 'vue-cookies'
 
 const tokenKey = 'userToken';
@@ -17,12 +18,22 @@ export function removeToken(){
     VueCookies.remove(tokenKey);
 }
 
-//设置用户信息
-export function setUser(){
-
+//登录请求token
+export function login(param){
+    return request({
+        url: 'user.json',
+        method: 'get',
+        data:param
+    })
 }
 
-//获取用户信息
-export function getUser(){
-    
+//设置用户信息
+export function getUserInfo(token){
+    return request({
+        url: 'userInfo.json',
+        method: 'get',
+        data:{
+            token
+        }
+    })
 }

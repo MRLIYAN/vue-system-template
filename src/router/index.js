@@ -2,7 +2,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import layout from '@/views/layout'
 
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
+
 Vue.use(VueRouter)
+
 
   const routes = [
   {
@@ -57,7 +64,13 @@ Vue.use(VueRouter)
     path:'*',
     redirect:'/404',
   }
-  
+]
+
+export const notfoundrouter = [
+  {
+    path:'*',
+    redirect:'/404',
+  }
 ]
 
 const router = new VueRouter({
@@ -67,3 +80,4 @@ const router = new VueRouter({
 })
 
 export default router
+

@@ -16,7 +16,7 @@ const actions = {
 }
 
 const getters = {
-
+    getRoutes:state => state.routes
 }
 
 export default {
