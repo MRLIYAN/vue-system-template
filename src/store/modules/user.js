@@ -44,7 +44,6 @@ const actions = {
             commit("removeUserInfo")
             resetRouter();
             resolve();
-        
         })
     },
     getUserInfo({commit}) {

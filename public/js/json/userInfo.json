@@ -8,10 +8,10 @@
         },
         "menu":[
             {
-                "path":"/home",
+                "path":"/",
                 "component":"layout",
                 "name":"home",
-                "redirect":"/home/home",
+                "redirect":"/home",
                 "title":"主页",
                 "meta":{
                     "breadCrumb":"true",

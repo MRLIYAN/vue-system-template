@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store'
 import layout from '@/views/layout'
 
 //解决多次点击相同路由报错问题：Avoided redundant navigation to current location:""
@@ -16,7 +17,7 @@ Vue.use(VueRouter)
   {
     path: '/',
     component:layout,
-    redirect:'/layout',
+    redirect:'/home',
     meta:{
       hidden:"true",
     }
@@ -74,7 +75,7 @@ export const notfoundrouter = [
 ]
 
 
-const createRouter = () => new VueRouter({
+export const createRouter = () => new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
@@ -84,8 +85,9 @@ const router = createRouter()
 
 //清空路由，重置路由
 export function resetRouter() {
-  router.matcher = new VueRouter().matcher // reset router
-  router.addRoutes(routes);
+  store.state.router.routes = [];
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
 }
 
 
