@@ -12,11 +12,11 @@
                 "component":"layout",
                 "name":"home",
                 "redirect":"/home/home",
-                "level":"1",
                 "title":"主页",
                 "meta":{
                     "breadCrumb":"true",
-                    "hidden":"false"
+                    "hidden":"false",
+                    "icon":"el-icon-menu"
                 },
                 "children":[
                     {
@@ -29,16 +29,16 @@
             {
                 "path":"/menuOne",
                 "component":"layout",
-                "name":"menuone",
+                "name":"menuOne",
                 "title":"菜单1",
-                "level":"1",
                 "meta":{
                     "breadCrumb":"true",
-                    "hidden":"false"
+                    "hidden":"false",
+                    "icon":"el-icon-menu"
                 },
                 "children":[
                     {   
-                        "path":"menuOneone",
+                        "path":"/menuOne/menuOneone",
                         "component":"/menuOne/menuOneone",
                         "name":"menuOneone",
                         "title":"菜单1-1",
@@ -48,7 +48,7 @@
                         }
                     },
                     {   
-                        "path":"menuOnetwo",
+                        "path":"/menuOne/menuOnetwo",
                         "component":"layout",
                         "name":"menuOnetwo",
                         "title":"菜单1-2",
@@ -58,9 +58,9 @@
                         },
                         "children":[
                             {
-                                "path":"menuOneTwoone",
-                                "component":"/meuOne/menuOnetwo/menuOneTwoone",
-                                "name":"menuOneTwoone",
+                                "path":"/menuOne/menuOnetwo/menuOneTwoone",
+                                "component":"/menuOne/menuOnetwo/menuOneTwoone",
+                                "name":"menuOnetwo",
                                 "title":"菜单1-2-1",
                                 "meta":{
                                     "breadCrumb":"true",

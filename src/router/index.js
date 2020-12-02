@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import layout from '@/views/layout'
 
+//解决重复点击路由报错问题：Avoided redundant navigation to current location:""
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
@@ -59,10 +60,6 @@ Vue.use(VueRouter)
     meta:{
       hidden:"true"
     }
-  },
-  {
-    path:'*',
-    redirect:'/404',
   }
 ]
 
@@ -70,14 +67,26 @@ export const notfoundrouter = [
   {
     path:'*',
     redirect:'/404',
+    meta:{
+      hidden:"true"
+    }
   }
 ]
 
-const router = new VueRouter({
+
+const createRouter = () => new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+
+const router = createRouter()
+
+//清空路由，重置路由
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
 
 export default router
 

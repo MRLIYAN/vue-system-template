@@ -1,5 +1,6 @@
-import {login,setToken,getToken,getUserInfo} from '@/utils/user.js' 
+import {login,setToken,getToken,removeToken,getUserInfo} from '@/utils/user.js' 
 import {dealRoute} from '@/utils/menu.js'
+import {resetRouter} from '@/router'
 
 const state = {
     userInfo:{
@@ -16,6 +17,11 @@ const mutations = {
     },
     setToken(state,token){
         state.userInfo.token = token;
+    },
+    removeUserInfo(state) {
+        state.userInfo.user = '';
+        state.userInfo.role = '';
+        state.userInfo.token = '';
     }
 }
 
@@ -30,6 +36,15 @@ const actions = {
             }).catch(error => {
                 reject(error);
             })
+        })
+    },
+    logoff({commit}) {
+        return new Promise((resolve) => {
+            removeToken();
+            commit("removeUserInfo")
+            resetRouter();
+            resolve();
+        
         })
     },
     getUserInfo({commit}) {

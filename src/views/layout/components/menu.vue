@@ -1,12 +1,16 @@
 <template>
    <div class="menu-container">
         <el-scrollbar class="el-scrollbar">
-            <!-- <router-link tag="div" :to="{path:'/ele'}">aaaa</router-link> -->
             <el-menu
-                default-active="2"
+                :default-active="$route.path"
                 class="el-menu-vertical-demo"
                 mode="vertical"
-                router>
+                :unique-opened="false"
+                router
+                background-color="#545c64"
+                text-color="#fff"
+                active-text-color="#ffd04b"
+                >
                 <menu-tree v-for="route in menuData" :key="route.path" :routeItem="route"></menu-tree>
             </el-menu>
         </el-scrollbar>
@@ -36,6 +40,7 @@ export default {
     },
     mounted(){
         this.menuData = this.$store.state.router.routes;
+        console.log(this.menuData);
     },
     methods: {
         handleOpen(key, keyPath) {
@@ -53,6 +58,7 @@ export default {
     width:100%; height:100%;
     .el-menu{
         border:none;
+        height: 100%;
     }
     .el-scrollbar{
         width:100%;
@@ -61,7 +67,10 @@ export default {
     }
     ::v-deep .el-scrollbar__wrap {
         overflow-x: hidden;
-    }
-    
+        .el-scrollbar__view{
+            height:100%;
+        }
+    } 
+
 }
 </style>

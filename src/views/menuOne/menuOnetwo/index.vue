@@ -1,6 +1,6 @@
 <template>
    <div>
-       组件1-2-1
+      菜单1-2
    </div>
 </template>
 

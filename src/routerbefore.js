@@ -1,6 +1,6 @@
 import router from '@/router'
 import store from '@/store'
-
+import { Message } from 'element-ui'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -11,22 +11,24 @@ router.beforeEach(async(to,from,next) => {
     NProgress.start();
     let token = getToken();
     if(token){
-        //判断是不是刷新页面，刷新页面没数据，是刷新页面就重新请求，这句必须写，否则第一次登录进入没有菜单，或者进入404浏览器回退路由出现守卫死循环
-        if(store.getters['router/getRoutes'] == 0){
+        // 保存在store中路由不为空则放行 (动态路由添加后需要保存在某个地方，防止页面被刷新后找不到路由)
+        if(store.state.router.routes == 0){
             try {
                 await store.dispatch('user/getUserInfo')
                 router.addRoutes(store.getters['router/getRoutes'])
-                console.log(store.getters['router/getRoutes']);
+                // 如果 addRoutes 并未完成，路由守卫会一层一层的执行执行，直到 addRoutes 完成，找到对应的路由，不加此句话，刷新页面会空白，找不到路由
+                next({...to,repleace:true})
             } catch (error) {
                 console.log(error);
                 removeToken();
-                next('/login')
+                Message.error(error.toString() || '出现错误！！')
+                throw new Error(error);
             }
+        }else{
+            next();
         }
         if(to.path == '/login'){
-            next('/');
-        }else {
-            next();
+            next({path:'/'});
         }
     }else{
         if (whiteList.indexOf(to.path) !== -1) {

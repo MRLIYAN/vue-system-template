@@ -47,7 +47,6 @@ export default {
          }
          this.$store.dispatch('user/login',param).then(() => {
             console.log(this.$store.state.router.routes);
-            //this.$router.addRoutes(this.$store.state.router.routes);
             this.$router.push('/')
          })
         

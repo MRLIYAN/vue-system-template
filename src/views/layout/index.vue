@@ -6,7 +6,7 @@
                <!-- <h1 class="name">某某某信息管理系统</h1> -->
            </div>
            <div class="top-right">
-              
+              <span @click="logoff">注销</span>
            </div>
        </div>
        <div class="bottom">
@@ -15,9 +15,10 @@
            </div>
            <div class="right-cont">
                 <transition name="fade-slide" mode="out-in">
-                   <router-view></router-view>
+                    <keep-alive>
+                        <router-view></router-view>
+                    </keep-alive>
                 </transition>
-                
            </div>
        </div>
    </div>
@@ -28,6 +29,13 @@ import slideMenu from './components/menu'
 export default {
    components:{
        slideMenu
+   },
+   methods: {
+       logoff() {
+           this.$store.dispatch('user/logoff').then(() => {
+               this.$router.push({path:'/login'})
+           })
+       }
    }
 }
 </script>
@@ -93,7 +101,7 @@ $color:#fff;
         transform: translateX(100%);
     }
     .fade-slide-enter-active,.fade-sldie-leave-active{
-        transition: all .5s ease;
+        transition: all .4s ease;
     }
 }
 </style>

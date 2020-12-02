@@ -2,8 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
-//import router from './modules/router.js'
-
 const modulesFiles = require.context('./modules', true, /\.js$/)
 
 const modules = modulesFiles.keys().reduce((modules, modulePath) => {
