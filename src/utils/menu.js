@@ -5,7 +5,9 @@ let menudata = '';
 //处理菜单修改component引入
 function dealMenu(data){
     for(let i=0; i<data.length; i++){
-        data[i].component = loadingComponent(data[i].component);
+        if(data[i].component){
+            data[i].component = loadingComponent(data[i].component);
+        }
         if(data[i].children&&data[i].children.length>0){
             dealMenu(data[i].children);
         }

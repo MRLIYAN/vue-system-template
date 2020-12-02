@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import layout from '@/views/layout'
 
-//解决重复点击路由报错问题：Avoided redundant navigation to current location:""
+//解决多次点击相同路由报错问题：Avoided redundant navigation to current location:""
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
@@ -84,9 +84,10 @@ const router = createRouter()
 
 //清空路由，重置路由
 export function resetRouter() {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
+  router.matcher = new VueRouter().matcher // reset router
+  router.addRoutes(routes);
 }
+
 
 export default router
 
