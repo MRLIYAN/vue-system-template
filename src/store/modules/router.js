@@ -6,12 +6,18 @@ const state = {
 const mutations = {
     addMenu(state,data){
         state.routes=data;
+    },
+    removeRoutes(state,routes) {
+        state.routes = routes
     }
 }
 
 const actions = {
     addMenu({commit},data){
         commit("addMenu",data)
+    },
+    removeRoutes({commit}) {
+        commit("removeRoutes",[])
     }
 }
 
