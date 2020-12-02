@@ -23,19 +23,19 @@ Vue.use(VueRouter)
     }
   },
   {
+    path:'/layout',
+    name:'layout',
+    redirect:'/home',
+    meta:{
+      hidden:'true'
+    }
+  },
+  {
     path:'/login',
     name:'login',
     component:()=>import('@/views/login'),
     meta:{
       hidden:"true",
-    }
-  },
-  {
-    path:'/layout',
-    name:'layout',
-    component:()=>import('@/views/layout'),
-    meta:{
-      hidden:'true'
     }
   },
   {
