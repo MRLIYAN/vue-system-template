@@ -3,6 +3,7 @@ import {dealRoute} from '@/utils/menu.js'
 import {resetRouter} from '@/router'
 
 const state = {
+    routes:[],
     userInfo:{
         token:'',
         username:'',
@@ -11,6 +12,12 @@ const state = {
 }
 
 const mutations = {
+    addMenu(state,data){
+        state.routes=data;
+    },
+    removeRoutes(state,routes) {
+        state.routes = routes
+    },
     getUserInfo(state,user) {
         state.userInfo.user = user.userName;
         state.userInfo.role = user.role;
@@ -57,15 +64,24 @@ const actions = {
                 reject(error);
             })
         })
+    },
+    addMenu({commit},data){
+        commit("addMenu",data)
+    },
+    removeRoutes({commit}) {
+        commit("removeRoutes",[])
     }
 }
 
-
+const getters = {
+    getRoutes:state => state.routes
+}
 
 
 export default {
     namespaced: true,
     state,
     mutations,
-    actions
+    actions,
+    getters
 }

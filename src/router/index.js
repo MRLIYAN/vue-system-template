@@ -85,7 +85,7 @@ const router = createRouter()
 
 //清空路由，重置路由
 export function resetRouter() {
-  store.dispatch('router/removeRoutes')
+  store.dispatch('user/removeRoutes')
   const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router
 }

@@ -30,5 +30,5 @@ export function dealRoute(data){
     menudata = data;
     dealMenu(menudata);
     menudata.push(...notfoundrouter);
-    store.dispatch('router/addMenu',menudata)
+    store.dispatch('user/addMenu',menudata)
 }

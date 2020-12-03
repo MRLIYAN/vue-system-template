@@ -39,8 +39,8 @@ export default {
         ])
     },
     mounted(){
-        this.menuData = this.$store.state.router.routes;
-        console.log(this.menuData);
+        this.menuData = this.$store.state.user.routes;
+        console.log(this.$route.path);
     },
     methods: {
         handleOpen(key, keyPath) {
