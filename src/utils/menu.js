@@ -20,7 +20,7 @@ function loadingComponent(component){
         case 'layout':
             return () => import(`@/views/layout/index.vue`)
         default:
-            return () => import(`@/views${component}/index.vue`)
+            return () => import(`@/${component}.vue`)
 
     }
 }

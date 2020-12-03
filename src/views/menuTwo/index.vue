@@ -1,6 +1,6 @@
 <template>
    <div>
-      <router-view></router-view>
+这是菜单2
    </div>
 </template>
 
