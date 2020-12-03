@@ -15,7 +15,7 @@ const mutations = {
     addMenu(state,data){
         state.routes=data;
     },
-    removeRoutes(state,routes) {
+    removeRoutes(state,routes = []) {
         state.routes = routes
     },
     getUserInfo(state,user) {
@@ -49,6 +49,7 @@ const actions = {
         return new Promise((resolve) => {
             removeToken();
             commit("removeUserInfo")
+            commit("removeRoutes")
             resetRouter();
             resolve();
         })
@@ -67,9 +68,6 @@ const actions = {
     },
     addMenu({commit},data){
         commit("addMenu",data)
-    },
-    removeRoutes({commit}) {
-        commit("removeRoutes",[])
     }
 }
 

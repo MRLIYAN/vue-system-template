@@ -9,6 +9,11 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 
+import '@/style/slideMenu.scss'
+import '@/style/layout.scss'
+import variable from '@/style/variable.scss'
+Vue.prototype.$variable = variable
+
 import './routerbefore'
 
 import reqdata from './api/req.js'

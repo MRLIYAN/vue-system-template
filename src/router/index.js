@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import store from '@/store'
 import layout from '@/views/layout'
 
 //解决多次点击相同路由报错问题：Avoided redundant navigation to current location:""
@@ -85,7 +84,6 @@ const router = createRouter()
 
 //清空路由，重置路由
 export function resetRouter() {
-  store.dispatch('user/removeRoutes')
   const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router
 }

@@ -1,0 +1,14 @@
+//系统导航菜单背景色
+$slideMenuBg:#fff;
+$slideMenuBgDeep:#16181d;
+$slideMenuBgLight:#f7faff;
+$menuTextColor:#303030;
+$menuTextActive:#fff;
+
+:export{
+    slideMenuBg:$slideMenuBg;
+    slideMenuBgDeep:$slideMenuBgDeep;
+    slideMenuBgLight:$slideMenuBgLight;
+    menuTextColor:$menuTextColor;
+    menuTextActive:$menuTextActive
+}

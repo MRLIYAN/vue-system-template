@@ -18,9 +18,9 @@ function dealMenu(data){
 function loadingComponent(component){
     switch(component){
         case 'layout':
-            return () => import(`@/views/layout/index.vue`)
+            return () => import(`@/views/layout`)
         default:
-            return () => import(`@/${component}.vue`)
+            return () => import(`@/${component}`)
 
     }
 }

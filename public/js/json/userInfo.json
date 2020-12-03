@@ -20,7 +20,7 @@
                 "children":[
                     {
                         "path":"home",
-                        "component":"views/home/index",
+                        "component":"views/home",
                         "name":"home"
                     }
                 ]
@@ -34,12 +34,12 @@
                 "meta":{
                     "breadCrumb":"true",
                     "hidden":"false",
-                    "icon":"el-icon-menu"
+                    "icon":"el-icon-s-help"
                 },
                 "children":[
                     {   
                         "path":"/menuOne/menuOneone",
-                        "component":"views/menuOne/menuOneone/index",
+                        "component":"views/menuOne/menuOneone",
                         "name":"menuOneone",
                         "title":"菜单1-1",
                         "meta":{
@@ -49,7 +49,7 @@
                     },
                     {   
                         "path":"/menuOne/menuOnetwo",
-                        "component":"views/menuOne/menuOnetwo/index",
+                        "component":"views/menuOne/menuOnetwo",
                         "name":"menuOnetwo",
                         "title":"菜单1-2",
                         "meta":{
@@ -59,7 +59,7 @@
                         "children":[
                             {
                                 "path":"/menuOne/menuOnetwo/menuOneTwoone",
-                                "component":"views/menuOne/menuOnetwo/menuOneTwoone/index",
+                                "component":"views/menuOne/menuOnetwo/menuOneTwoone",
                                 "name":"menuOneTwoone",
                                 "title":"菜单1-2-1",
                                 "meta":{
@@ -68,6 +68,16 @@
                                 }
                             }
                         ]
+                    },
+                    {   
+                        "path":"/menuOne/menuOnethree",
+                        "component":"views/menuOne/menuOnethree",
+                        "name":"menuOnethree",
+                        "title":"菜单1-3",
+                        "meta":{
+                            "breadCrumb":"true",
+                            "hidden":"false"
+                        }
                     }
                 ]
                
@@ -80,14 +90,35 @@
                 "meta":{
                     "breadCrumb":"true",
                     "hidden":"false",
-                    "icon":"el-icon-menu"
+                    "icon":"el-icon-s-order"
                 },
                 "children":[{
                     "path":"index",
-                    "component":"views/menuTwo/index",
+                    "component":"views/menuTwo",
                     "name":"menuTwo"
                 }]
+            },
+            {
+                "path":"/menuThree",
+                "component":"layout",
+                "title":"菜单3",
+                "meta":{
+                    "breadCrumb":"true",
+                    "hidden":"false",
+                    "icon":"el-icon-s-tools"
+                },
+                "children":[{
+                    "path":"/menuThree/menuThreeOne",
+                    "component":"views/menuThree/menuThreeOne",
+                    "name":"menuThree",
+                    "title":"菜单3-1",
+                    "meta":{
+                        "breadCrumb":"true",
+                        "hidden":"false"
+                    }
+                }]
             }
+
         ]
     }
 }
