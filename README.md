@@ -41,6 +41,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
         breadCrumb：是否则面包屑中显示
 ### 使用规则
     对应menu和menuTree组件的循环规则思路
-    1、一级路由点击跳转需要二级路由才能展示，不添加二级路由直接跳转会刷新当前页面，并没有在router-view中显示。所以，当一级路由没有子菜单时，会添加redirect属性，重定向到子菜单显示当前路由，所以，有redirect属性的不需要判是否有子级菜单，直接跳过，有子级菜单的则不需要添加redirect属性，再去判断chilren即可
+    1、 一级路由点击跳转需要二级路由才能展示，不添加二级路由直接跳转会刷新当前页面，并没有在router-view中显示。
+        所以，当一级路由没有子菜单时，会添加redirect属性，重定向到子菜单显示当前路由，所以，有redirect属性的不需要
+        判是否有子级菜单，直接跳过，有子级菜单的则不需要添加redirect属性，再去判断chilren即可。
             
 
