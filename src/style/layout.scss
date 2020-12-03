@@ -12,7 +12,8 @@
             line-height: 50px;
             background:#fff;
             border-bottom:$commonBorder;
-            box-shadow:0 2px 3px 0px #999;
+            box-shadow:0 1px 3px 0 rgba(0,21,41,.08);
+            position: relative;
         }
         .layout-bottom{
             width:100%;
