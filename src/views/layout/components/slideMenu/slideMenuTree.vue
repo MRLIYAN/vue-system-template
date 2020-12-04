@@ -1,6 +1,6 @@
 <template>
     <div class="menuTree-ctain">
-        <div v-if="routeItem.meta.hidden == 'false'">
+        <div v-if="routeItem.meta && routeItem.meta.hidden == 'false'">
             <!-- 有重定向的则为一级菜单需要重定向，则跳过，没子级菜单，
                 没有重定向并且也没有children的则也没有子级菜单，直接显示，否则取children循环
              -->

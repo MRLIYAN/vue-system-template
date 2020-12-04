@@ -19,7 +19,7 @@
                 },
                 "children":[
                     {
-                        "path":"home",
+                        "path":"/home",
                         "component":"views/home",
                         "name":"home",
                         "meta":{
@@ -99,7 +99,7 @@
                     "icon":"el-icon-s-order"
                 },
                 "children":[{
-                    "path":"index",
+                    "path":"/menuTwo/index",
                     "component":"views/menuTwo",
                     "name":"menuTwo",
                     "meta":{

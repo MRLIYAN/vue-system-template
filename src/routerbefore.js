@@ -15,6 +15,7 @@ router.beforeEach(async(to,from,next) => {
         if(store.state.user.routes == 0){
             try {
                 await store.dispatch('user/getUserInfo')
+                router.options.routes = store.getters['user/getRoutes'];
                 router.addRoutes(store.getters['user/getRoutes'])
                 // 如果 addRoutes 并未完成，路由守卫会一层一层的执行执行，直到 addRoutes 完成，找到对应的路由，不加此句话，刷新页面会空白，找不到路由
                 next({...to,repleace:true})

@@ -14,6 +14,13 @@ export default {
     data() {
         return {
             fullPath:null,
+            home:[{
+                path:'/home',
+                meta:{
+                    title:'首页',
+                    breadCrumb:'true'
+                }
+            }]
         }
     },
     watch: {
@@ -36,20 +43,18 @@ export default {
         },
         getBreadCrumb(isHome) {
             let matched = this.$route.matched;
-            //通过判断当前是否是首页，是首页就清空，防止出现选项卡两个首页的情况
+            console.log(matched);
+            //判断第一个是不是首页组件，不是吧第一个首页放前面，保证面包屑第一个永远是固定的首页
             if(!isHome){
                 if(matched[0].path != '/' || matched[0].path != '/home'){
-                    matched  =  [{
-                                    path:'/',
-                                    meta:{
-                                        title:'主页',
-                                        breadCreumb:true
-                                    }
-                                }].concat(matched)
+                    matched = this.home.concat(matched);
                 }
             }
             this.fullPath = matched.filter(item => {
-                return item.meta.breadCrumb != 'false';
+                /*
+                    过滤有path路径，没有重定向（因为有重定向的是重定向了子路由，父级路由要忽略），允许显示面包屑的路由
+                */
+                return item.path && !item.redirect && item.meta.breadCrumb != 'false';
             })
         }
     }
