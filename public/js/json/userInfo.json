@@ -11,8 +11,8 @@
                 "path":"/",
                 "component":"layout",
                 "redirect":"/home",
-                "title":"主页",
                 "meta":{
+                    "title":"主页",
                     "breadCrumb":"true",
                     "hidden":"false",
                     "icon":"el-icon-menu"
@@ -21,7 +21,13 @@
                     {
                         "path":"home",
                         "component":"views/home",
-                        "name":"home"
+                        "name":"home",
+                        "meta":{
+                            "title":"主页",
+                            "breadCrumb":"true",
+                            "hidden":"false",
+                            "icon":"el-icon-menu"
+                        }
                     }
                 ]
                
@@ -30,8 +36,8 @@
                 "path":"/menuOne",
                 "component":"layout",
                 "name":"menuOne",
-                "title":"菜单1",
                 "meta":{
+                    "title":"菜单1",
                     "breadCrumb":"true",
                     "hidden":"false",
                     "icon":"el-icon-s-help"
@@ -41,8 +47,8 @@
                         "path":"/menuOne/menuOneone",
                         "component":"views/menuOne/menuOneone",
                         "name":"menuOneone",
-                        "title":"菜单1-1",
                         "meta":{
+                            "title":"菜单1-1",
                             "breadCrumb":"true",
                             "hidden":"false"
                         }
@@ -51,8 +57,8 @@
                         "path":"/menuOne/menuOnetwo",
                         "component":"views/menuOne/menuOnetwo",
                         "name":"menuOnetwo",
-                        "title":"菜单1-2",
                         "meta":{
+                            "title":"菜单1-2",
                             "breadCrumb":"true",
                             "hidden":"false"
                         },
@@ -61,8 +67,8 @@
                                 "path":"/menuOne/menuOnetwo/menuOneTwoone",
                                 "component":"views/menuOne/menuOnetwo/menuOneTwoone",
                                 "name":"menuOneTwoone",
-                                "title":"菜单1-2-1",
                                 "meta":{
+                                    "title":"菜单1-2-1",
                                     "breadCrumb":"true",
                                     "hidden":"false"
                                 }
@@ -73,8 +79,8 @@
                         "path":"/menuOne/menuOnethree",
                         "component":"views/menuOne/menuOnethree",
                         "name":"menuOnethree",
-                        "title":"菜单1-3",
                         "meta":{
+                            "title":"菜单1-3",
                             "breadCrumb":"true",
                             "hidden":"false"
                         }
@@ -86,8 +92,8 @@
                 "path":"/menuTwo",
                 "component":"layout",
                 "redirect":"/menuTwo/index",
-                "title":"菜单2",
                 "meta":{
+                    "title":"菜单2",
                     "breadCrumb":"true",
                     "hidden":"false",
                     "icon":"el-icon-s-order"
@@ -95,14 +101,20 @@
                 "children":[{
                     "path":"index",
                     "component":"views/menuTwo",
-                    "name":"menuTwo"
+                    "name":"menuTwo",
+                    "meta":{
+                        "title":"菜单2",
+                        "breadCrumb":"true",
+                        "hidden":"false",
+                        "icon":"el-icon-s-order"
+                    }
                 }]
             },
             {
                 "path":"/menuThree",
                 "component":"layout",
-                "title":"菜单3",
                 "meta":{
+                    "title":"菜单3",
                     "breadCrumb":"true",
                     "hidden":"false",
                     "icon":"el-icon-s-tools"
@@ -111,8 +123,8 @@
                     "path":"/menuThree/menuThreeOne",
                     "component":"views/menuThree/menuThreeOne",
                     "name":"menuThree",
-                    "title":"菜单3-1",
                     "meta":{
+                        "title":"菜单3-1",
                         "breadCrumb":"true",
                         "hidden":"false"
                     }

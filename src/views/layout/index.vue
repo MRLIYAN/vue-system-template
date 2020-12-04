@@ -1,12 +1,13 @@
 <template>
-   <div class="layout-ctain">
+   <div class="layout-container">
        <div class="layout-top">
            <div class="layout-top-left">
                <img class="logo" src="@/assets/logo.png" alt="">
                <h1 class="name">vue-system-template</h1>
+               <breadCrumb />
            </div>
            <div class="layout-top-right">
-              <span @click="logoff">注销</span>
+               <span @click="logoff">注销</span>
            </div>
        </div>
        <div class="layout-bottom">
@@ -21,12 +22,14 @@
 </template>
 
 <script>
-import slideMenu from './components/slideMenu'
+import slideMenu from './components/slideMenu/slideMenu'
 import appMain from './appMain'
+import breadCrumb from './components/breadCrumb'
 export default {
    components:{
        slideMenu,
-       appMain
+       appMain,
+       breadCrumb
    },
    methods: {
        logoff() {

@@ -12,48 +12,50 @@
     .el-menu{
         border:none;
         height: 100%;
+
+         //菜单文字图标位置样式更改
+        .el-menu-item,.el-submenu__title{
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .menu-icon{
+            width:$menuIconSize; height:$menuIconSize;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu-font{
+            padding:0 10px;
+            display: inline-block;
+            max-width: 100%;
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        //菜单导航激活的背景色、文字、图标颜色更改
+        .el-menu-item.is-active,
+        .el-menu-item:hover,
+        .el-submenu__title:hover{
+            //background: #009688 !important;
+            background:$activeBgColor;
+        }
+
+        .el-menu-item.is-active,
+        .el-menu-item.is-active .menu-icon,
+        .el-menu-item:hover,
+        .el-menu-item:hover .menu-icon,
+        .el-menu-item:hover .el-icon-arrow-down:before,
+        .el-submenu__title:hover,
+        .el-submenu__title:hover .menu-icon,
+        .el-submenu__title:hover .el-icon-arrow-down:before{
+            color:$activeTextColor;
+        }
+
     }
 
-    //菜单文字图标位置样式更改
-    .el-menu-item,.el-submenu__title{
-        display:flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    .menu-icon{
-        width:$menuIconSize; height:$menuIconSize;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .menu-font{
-        padding:0 10px;
-        display: inline-block;
-        max-width: 100%;
-        overflow:hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    
-    //菜单导航背景色、文字、图标颜色更改
-    .el-menu-item.is-active,
-    .el-menu-item:hover,
-    .el-submenu__title:hover{
-        //background: #009688 !important;
-        background:$activeBgColor;
-    }
-
-    .el-menu-item.is-active,
-    .el-menu-item.is-active .menu-icon,
-    .el-menu-item:hover,
-    .el-menu-item:hover .menu-icon,
-    .el-menu-item:hover .el-icon-arrow-down:before,
-    .el-submenu__title:hover,
-    .el-submenu__title:hover .menu-icon,
-    .el-submenu__title:hover .el-icon-arrow-down:before{
-        color:$activeTextColor;
-    }
-
+   
     
 }
 

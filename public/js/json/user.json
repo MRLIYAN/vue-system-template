@@ -3,66 +3,6 @@
     "result":{
         "user":{
             "token":"admin"
-        },
-        "menu":[
-            {
-                "path":"/home",
-                "component":"layout",
-                "name":"home",
-                "level":"1",
-                "title":"主页",
-                "meta":{
-                    "breadCrumb":"true",
-                    "hidden":"false"
-                }
-               
-            },
-            {
-                "path":"/menuOne",
-                "component":"layout",
-                "name":"menuone",
-                "title":"菜单1",
-                "level":"1",
-                "meta":{
-                    "breadCrumb":"true",
-                    "hidden":"false"
-                },
-                "children":[
-                    {   
-                        "path":"menuOneone",
-                        "component":"menuOneone",
-                        "name":"menuOneone",
-                        "titel":"菜单1-1",
-                        "meta":{
-                            "breadCrumb":"true",
-                            "hidden":"false"
-                        }
-                    },
-                    {   
-                        "path":"menuOnetwo",
-                        "component":"layout",
-                        "name":"menuOnetwo",
-                        "title":"菜单1-2",
-                        "meta":{
-                            "breadCrumb":"true",
-                            "hidden":"false"
-                        },
-                        "children":[
-                            {
-                                "path":"menuOneTwoone",
-                                "component":"menuOneTwoone",
-                                "name":"menuOneTwoone",
-                                "title":"菜单1-2-1",
-                                "meta":{
-                                    "breadCrumb":"true",
-                                    "hidden":"false"
-                                }
-                            }
-                        ]
-                    }
-                ]
-               
-            }
-        ]
+        }
     }
 }

@@ -13,15 +13,3 @@ export default {
    
 }
 </script>
-
-<style lang="scss" scoped>
-.main-container{
-    .fade-slide-enter,.fade-slide-leave-to{
-        transform: translateX(100%);
-    }
-    .fade-slide-enter-active,.fade-sldie-leave-active{
-        transition: all .4s ease;
-    }
-}
-
-</style>

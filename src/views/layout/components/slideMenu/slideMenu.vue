@@ -30,7 +30,6 @@ export default {
     },
     mounted(){
         this.menuData = this.$store.state.user.routes;
-        console.log(this.$variable);
     },
     methods: {
         handleOpen(key, keyPath) {

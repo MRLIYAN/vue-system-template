@@ -1,39 +1,20 @@
 // 系统整体布局的样式
 #app{
     $commonBorder:1px solid #f6f6f6;
-    .layout-ctain{
+    .layout-container{
         width:100%;
         height:100%;
-        overflow: hidden;
+        overflow: hidden;    
+    }
 
-        .layout-top{
-            width:100%;
-            height:50px; 
-            line-height: 50px;
-            background:#fff;
-            border-bottom:$commonBorder;
-            box-shadow:0 1px 3px 0 rgba(0,21,41,.08);
-            position: relative;
-        }
-        .layout-bottom{
-            width:100%;
-            height:calc(100% - 50px); 
-        }
-        .layout-left-nav{
-            width:220px;
-            height: 100%;
-            float: left;
-            background: #fff;
-            border-right:$commonBorder;
-        }
-        .layout-right-cont{
-            width:calc(100% - 220px);
-            height: 100%;
-            float: right;
-            background: #fff;
-            padding:10px;
-        }
-
+    .layout-top{
+        width:100%;
+        height:50px; 
+        line-height: 50px;
+        background:#fff;
+        border-bottom:$commonBorder;
+        box-shadow:0 1px 3px 0 rgba(0,21,41,.08);
+        position: relative;
 
         .layout-top-left,.layout-top-right{
             width: auto;
@@ -64,10 +45,34 @@
             margin-top:10px;
         }
 
-        
+    }
+
+    .layout-bottom{
+        width:100%;
+        height:calc(100% - 50px); 
+    }
+    .layout-left-nav{
+        width:220px;
+        height: 100%;
+        float: left;
+        background: #fff;
+        border-right:$commonBorder;
+    }
+    .layout-right-cont{
+        width:calc(100% - 220px);
+        height: 100%;
+        float: right;
+        background: #fff;
+        padding:10px;
     }
 
 
+    .el-breadcrumb{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
     //scrollbar插件修改
     .el-scrollbar{
         width:100%;

@@ -8,13 +8,13 @@
                 <!-- 有重定向，显示重定向的路径，没有，则显示默认的path，为了能够和$route.path对应，改变menu菜单组件激活的状态颜色 -->
                 <el-menu-item :index="routeItem.redirect ? routeItem.redirect : routeItem.path">
                     <i class="menu-icon" :class="routeItem.meta.icon||''" v-if="routeItem.meta.icon"></i>
-                    <span class="menu-font" :title="routeItem.title||''" slot="title">{{routeItem.title}}</span>
+                    <span class="menu-font" :title="routeItem.meta.title||''" slot="title">{{routeItem.meta.title}}</span>
                 </el-menu-item>
             </div>
             <el-submenu v-else :index="routeItem.path">
                 <template slot="title">
                     <i class="menu-icon" :class="routeItem.meta.icon||''" v-if="routeItem.meta.icon"></i>
-                    <span class="menu-font" :title="routeItem.title||''" :data-path="routeItem.path">{{routeItem.title}}</span>
+                    <span class="menu-font" :title="routeItem.meta.title||''" :data-path="routeItem.path">{{routeItem.meta.title}}</span>
                 </template>
                 <slideMenuTree v-for="child in routeItem.children" :routeItem="child" :key="child.path"></slideMenuTree>
             </el-submenu>
