@@ -110,7 +110,6 @@
             {
                 "path":"/menuThree",
                 "component":"layout",
-                "redirect":"no",
                 "meta":{
                     "title":"菜单3",
                     "breadCrumb":"true",
