@@ -12,10 +12,7 @@
                 "component":"layout",
                 "redirect":"/home",
                 "meta":{
-                    "title":"主页",
-                    "breadCrumb":"true",
-                    "hidden":"false",
-                    "icon":"el-icon-menu"
+                    "hidden":"false"
                 },
                 "children":[
                     {
@@ -93,10 +90,7 @@
                 "component":"layout",
                 "redirect":"/menuTwo/index",
                 "meta":{
-                    "title":"菜单2",
-                    "breadCrumb":"true",
-                    "hidden":"false",
-                    "icon":"el-icon-s-order"
+                    "hidden":"false"
                 },
                 "children":[{
                     "path":"/menuTwo/index",
