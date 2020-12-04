@@ -4,7 +4,7 @@
            <div class="layout-top-left">
                <img class="logo" src="@/assets/logo.png" alt="">
                <h1 class="name">vue-system-template</h1>
-               <breadCrumb />
+              
            </div>
            <div class="layout-top-right">
                <span @click="logoff">注销</span>
@@ -15,6 +15,9 @@
                <slideMenu />
            </div>
            <div class="layout-right-cont">
+               <div class="bread-tags-link">
+                    <breadCrumb />
+               </div>
                <appMain />
            </div>
        </div>

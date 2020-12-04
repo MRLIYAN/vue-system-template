@@ -1,9 +1,13 @@
 <template>
    <div class="breadCrumb-container">
         <el-breadcrumb separator=">" >
-            <!-- <el-breadcrumb-item :to="{path:'/'}">主页</el-breadcrumb-item> -->
             <transition-group name="breadcrumb">
-                <el-breadcrumb-item v-for="item in fullPath" :key="item.path" :to="{path:item.path}">{{item.meta.title}}</el-breadcrumb-item>
+                <!-- 如果有breadCrumbClick并且还等于false，不允许点击跳转路由，比如带有折叠的菜单，点击肯定不可以跳转 -->
+                <el-breadcrumb-item v-for="item in fullPath" :key="item.path" 
+                    :class="item.meta.breadCrumbClick&&item.meta.breadCrumbClick=='false'?'no-redirect-crumb':''"
+                    :to="{path:item.meta.breadCrumbClick&&item.meta.breadCrumbClick=='false'?'':item.path}">
+                        {{item.meta.title}}
+                </el-breadcrumb-item>
             </transition-group>
         </el-breadcrumb>
    </div>
@@ -63,8 +67,15 @@ export default {
 
 <style lang="scss" scoped>
 .breadCrumb-container{
+
+    height: 100%;
     display:flex;
     justify-content: flex-start;
     align-items: center;
+
+    ::v-deep .no-redirect-crumb .el-breadcrumb__inner,.no-redirect-crumb .el-breadcrumb__inner:hover{
+        color:#606266;
+        cursor:text;
+    }
 }
 </style>

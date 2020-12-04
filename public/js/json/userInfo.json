@@ -12,7 +12,8 @@
                 "component":"layout",
                 "redirect":"/home",
                 "meta":{
-                    "hidden":"false"
+                    "hidden":"false",
+                    "breadCrumb":"true"
                 },
                 "children":[
                     {
@@ -36,6 +37,7 @@
                 "meta":{
                     "title":"菜单1",
                     "breadCrumb":"true",
+                    "breadCrumbClick":"false",
                     "hidden":"false",
                     "icon":"el-icon-s-help"
                 },
@@ -57,6 +59,7 @@
                         "meta":{
                             "title":"菜单1-2",
                             "breadCrumb":"true",
+                            "breadCrumbClick":"false",
                             "hidden":"false"
                         },
                         "children":[
@@ -107,6 +110,7 @@
             {
                 "path":"/menuThree",
                 "component":"layout",
+                "redirect":"no",
                 "meta":{
                     "title":"菜单3",
                     "breadCrumb":"true",
