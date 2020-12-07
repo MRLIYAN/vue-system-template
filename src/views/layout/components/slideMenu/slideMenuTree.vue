@@ -4,9 +4,9 @@
             <!-- 有重定向的则为一级菜单需要重定向，则跳过，没子级菜单，
                 没有重定向并且也没有children的则也没有子级菜单，直接显示，否则取children循环
              -->
-            <div v-if="routeItem.redirect && routeItem.redirect != 'no' || !routeItem.redirect && !routeItem.children">
+            <div v-if="routeItem.meta.isChild != 'true'">
                 <!-- 有重定向，则说明需要调转到重定向的路由，则应该显示重定向的路由的信息 -->
-                <el-menu-item v-if="routeItem.redirect && routeItem.reidrect != 'no'" :index="routeItem.children[0].path">
+                <el-menu-item v-if="routeItem.redirect" :index="routeItem.children[0].path">
                     <i class="menu-icon" :class="routeItem.children[0].meta.icon||''" ></i>
                     <span class="menu-font" :title="routeItem.children[0].meta.title||''" slot="title">{{routeItem.children[0].meta.title}}</span>
                 </el-menu-item>
