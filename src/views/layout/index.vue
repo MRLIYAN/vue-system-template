@@ -29,18 +29,23 @@ import slideMenu from './components/slideMenu/slideMenu'
 import appMain from './appMain'
 import breadCrumb from './components/breadCrumb'
 export default {
-   components:{
-       slideMenu,
-       appMain,
-       breadCrumb
-   },
-   methods: {
-       logoff() {
-           this.$store.dispatch('user/logoff').then(() => {
-               this.$router.push({path:'/login'})
-           })
-       }
-   }
+    data() {
+        return {
+            
+        }
+    },
+    components:{
+        slideMenu,
+        appMain,
+        breadCrumb
+    },
+    methods: {
+        logoff() {
+            this.$store.dispatch('user/logoff').then(() => {
+                this.$router.push({path:'/login'})
+            })
+        }
+    }
 }
 </script>
 

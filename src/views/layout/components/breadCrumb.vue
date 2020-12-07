@@ -47,14 +47,12 @@ export default {
         },
         getBreadCrumb(isHome) {
             let matched = this.$route.matched;
-            console.log(matched);
             //判断第一个是不是首页组件，不是吧第一个首页放前面，保证面包屑第一个永远是固定的首页
             if(!isHome){
                 if(matched[0].path != '/' || matched[0].path != '/home'){
                     matched = this.home.concat(matched);
                 }
             }
-            console.log("------------面包屑matched--------------");
             this.fullPath = matched.filter(item => {
                 /*
                     过滤有path路径，没有重定向（因为有重定向的是重定向了子路由，父级路由要忽略），允许显示面包屑的路由

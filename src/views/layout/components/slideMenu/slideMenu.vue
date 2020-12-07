@@ -1,9 +1,9 @@
 <template>
    <div class="menu-container">
         <el-scrollbar class="el-scrollbar">
-            <el-menu
+            <el-menu :collapse="isCollapse"
                 :default-active="$route.path"
-                class="el-menu-vertical-demo"
+                :class="['el-menu-vertical-demo', isCollapse? 'el-menu-suo':'']"
                 mode="vertical"
                 :unique-opened="false"
                 router
@@ -14,6 +14,10 @@
                 <slideMenuTree v-for="route in menuData" :key="route.path" :routeItem="route"></slideMenuTree>
             </el-menu>
         </el-scrollbar>
+
+        <div class="slideMenuBtn" @click="menuSlideChange">
+            <i :class="isCollapse?'el-icon-s-unfold':'el-icon-s-fold'"></i>
+        </div>
    </div>
 </template>
 
@@ -23,6 +27,7 @@ export default {
     data() {
         return {
             menuData:[],
+            isCollapse:false,
         }
     },
     components: {
@@ -32,12 +37,10 @@ export default {
         this.menuData = this.$store.state.user.routes;
     },
     methods: {
-        handleOpen(key, keyPath) {
-            console.log(key, keyPath);
-        },
-        handleClose(key, keyPath) {
-            console.log(key, keyPath);
+        menuSlideChange() {
+            this.isCollapse = !this.isCollapse
         }
     }
 }
 </script>
+
