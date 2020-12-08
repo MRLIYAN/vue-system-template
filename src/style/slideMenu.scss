@@ -4,7 +4,7 @@
  $activeBgColor:rgba(24,144,255,.1) !important;
  $activeTextColor:#1890ff !important;
  //导航菜单图标大小
- $menuIconSize:16px;
+ $menuIconSize:18px;
 
  
 //菜单导航激活的背景色、文字、图标颜色更改
@@ -71,7 +71,7 @@
            text-align: left;
         }
         .menu-icon{
-            width:$menuIconSize; height:$menuIconSize;
+            font-size: $menuIconSize;
             display: inline-block;
         }
         .menu-font{

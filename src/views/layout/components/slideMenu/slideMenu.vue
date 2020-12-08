@@ -9,7 +9,7 @@
                 router
                 :background-color="this.$variable.slideMenuBg"
                 :text-color="this.$variable.menuTextColor"
-                :active-text-color="this.$variable.menuTextActive "
+                :active-text-color="this.$variable.menuTextActive"
                 >
                 <slideMenuTree v-for="route in menuData" :key="route.path" :routeItem="route"></slideMenuTree>
             </el-menu>

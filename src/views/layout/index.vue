@@ -4,19 +4,19 @@
            <div class="layout-top-left">
                <img class="logo" src="@/assets/logo.png" alt="">
                <h1 class="name">vue-system-template</h1>
-              
+               <breadCrumb style="margin-left:20px;" />
            </div>
            <div class="layout-top-right">
                <span @click="logoff">注销</span>
            </div>
        </div>
        <div class="layout-bottom">
-           <div class="layout-left-nav" :class="isCollpase?'layout-left-nav-suo':''">
+           <div class="layout-left-nav" :class="isCollpase?'layout-left-nav-shrink':''">
                <slideMenu />
            </div>
            <div class="layout-right-cont" :class="isCollpase?'layout-right-cont-expand':''">
                <div class="bread-tags-link">
-                    <breadCrumb />
+                    <tagsLink></tagsLink>
                </div>
                <appMain />
            </div>
@@ -28,11 +28,13 @@
 import slideMenu from './components/slideMenu/slideMenu'
 import appMain from './appMain'
 import breadCrumb from './components/breadCrumb'
+import tagsLink from './components/tagsLink/tagsLink'
 export default {
     components:{
         slideMenu,
         appMain,
-        breadCrumb
+        breadCrumb,
+        tagsLink
     },
     computed: {
         isCollpase() {

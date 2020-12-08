@@ -15,6 +15,7 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
 export default new Vuex.Store({
   modules,
   getters:{
-    slideMenu:state => state.app.slideMenu
+    slideMenu:state => state.app.slideMenu,
+    tagsVisitedRoute:state => state.tagsLink.tagsVisitedRoute
   }
 })
