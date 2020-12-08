@@ -9,8 +9,8 @@
             @click="toRoute(item)"
          >
          <span slot="label">
-            <span class="icon" :class="item.icon" style="margin-right:5px; font-size:16px;"></span>
-            <span class="font">{{item.title}}</span>
+            <span class="tags-icon" :class="item.icon" style="margin-right:5px; font-size:16px;"></span>
+            <span class="tags-font">{{item.title}}</span>
          </span>
          </el-tab-pane>
       </el-tabs>
@@ -65,6 +65,7 @@ export default {
    align-items: center;
 
    $tagsBorder:#dcdfe6;
+   $tagsColor:#303133;
    $tagsActiveBorder:#1890ff;
    $tagsActiveColor:#1890ff;
    $tagsActiveBgColor:rgba(24,144,255,.1);
@@ -100,7 +101,13 @@ export default {
       height:$tagsHeight;
       line-height: $tagsHeight;
       border-radius: 5px;
+      color:$tagsColor;
       cursor: pointer;
+   }
+   .el-tabs__item .tags-icon,.el-tabs__item .tags-font{
+      color:$tagsColor;
+      display: inline-block;
+      vertical-align: middle;
    }
    .el-tabs--card>.el-tabs__header .el-tabs__item.is-active{
       border-color:$tagsActiveBorder !important;
