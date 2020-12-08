@@ -3,7 +3,7 @@
         <el-scrollbar class="el-scrollbar">
             <el-menu :collapse="isCollapse"
                 :default-active="$route.path"
-                :class="['el-menu-vertical-demo', isCollapse? 'el-menu-suo':'']"
+                class="el-menu-vertical-demo"
                 mode="vertical"
                 :unique-opened="false"
                 router
@@ -23,11 +23,11 @@
 
 <script>
 import slideMenuTree from './slideMenuTree'
+import { mapGetters } from 'vuex'
 export default {
     data() {
         return {
             menuData:[],
-            isCollapse:false,
         }
     },
     components: {
@@ -36,9 +36,17 @@ export default {
     mounted(){
         this.menuData = this.$store.state.user.routes;
     },
+    computed: {
+        ...mapGetters([
+            "slideMenu"
+        ]),
+        isCollapse() {
+            return this.slideMenu
+        }
+    },
     methods: {
         menuSlideChange() {
-            this.isCollapse = !this.isCollapse
+            this.$store.dispatch('app/toggleSlideMenu')
         }
     }
 }

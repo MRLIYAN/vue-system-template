@@ -8,6 +8,7 @@
 
  
 //菜单导航激活的背景色、文字、图标颜色更改
+//放到全局，收缩后的菜单样式才能更改，和app同级
 .el-menu,.el-menu--vertical{
     .el-menu-item.is-active,
     .el-menu-item:hover,
@@ -61,6 +62,7 @@
     }
 
     .el-menu{
+        width:100% !important;
         border:none;
         height: 100%;
 
@@ -86,7 +88,7 @@
     }
 
    
-    .el-menu-suo{
+    .el-menu--collapse{
         .el-submenu__title{
             .menu-font,.menu-font+i{
                 display:none; 

@@ -11,10 +11,10 @@
            </div>
        </div>
        <div class="layout-bottom">
-           <div class="layout-left-nav">
+           <div class="layout-left-nav" :class="isCollpase?'layout-left-nav-suo':''">
                <slideMenu />
            </div>
-           <div class="layout-right-cont">
+           <div class="layout-right-cont" :class="isCollpase?'layout-right-cont-expand':''">
                <div class="bread-tags-link">
                     <breadCrumb />
                </div>
@@ -29,15 +29,15 @@ import slideMenu from './components/slideMenu/slideMenu'
 import appMain from './appMain'
 import breadCrumb from './components/breadCrumb'
 export default {
-    data() {
-        return {
-            
-        }
-    },
     components:{
         slideMenu,
         appMain,
         breadCrumb
+    },
+    computed: {
+        isCollpase() {
+            return this.$store.state.app.slideMenu
+        }
     },
     methods: {
         logoff() {

@@ -57,8 +57,12 @@
         float: left;
         background: #fff;
         border-right:$commonBorder;
-
+        transition:width .26s ease;
     }
+    .layout-left-nav-suo{
+        width:55px;
+    }
+
     .layout-right-cont{
         width:calc(100% - 220px);
         height: 100%;
@@ -78,6 +82,10 @@
             height: calc(100% - 50px);
             padding: 10px;
         }
+    }
+    .layout-right-cont-expand{
+        width: calc(100% - 55px);
+        
     }
 
 
