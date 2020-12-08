@@ -1,7 +1,7 @@
 <template>
    <div class="breadCrumb-container">
         <el-breadcrumb separator=">" >
-            <transition-group name="breadcrumb">
+            <transition-group name="breadcrumb" appear>
                 <!-- 如果有breadCrumbClick并且还等于false，不允许点击跳转路由，比如带有折叠的菜单，点击肯定不可以跳转 -->
                 <el-breadcrumb-item v-for="item in fullPath" :key="item.path" 
                     :class="item.meta.breadCrumbClick != 'true'?'':'no-redirect-crumb'"
@@ -15,6 +15,7 @@
 
 <script>
 export default {
+    name:"breadCrumb",
     data() {
         return {
             fullPath:null,

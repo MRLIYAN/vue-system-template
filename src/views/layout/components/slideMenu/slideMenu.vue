@@ -25,6 +25,7 @@
 import slideMenuTree from './slideMenuTree'
 import { mapGetters } from 'vuex'
 export default {
+    name:"slideMenu",
     data() {
         return {
             menuData:[],
