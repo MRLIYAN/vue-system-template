@@ -14,6 +14,7 @@ Vue.use(ElementUI)
 import '@/style/slideMenu.scss'
 import '@/style/layout.scss'
 import '@/style/transition.scss'
+import '@/style/tagsLink.scss'
 import variable from '@/style/variable.scss'
 Vue.prototype.$variable = variable
 
