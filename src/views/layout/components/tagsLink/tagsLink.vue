@@ -109,6 +109,10 @@ export default {
       display: inline-block;
       vertical-align: middle;
    }
+   .el-tabs__item .tags-icon{
+      position: relative;
+      top: -1px;
+   }
    .el-tabs--card>.el-tabs__header .el-tabs__item.is-active{
       border-color:$tagsActiveBorder !important;
       background:$tagsActiveBgColor;
@@ -117,6 +121,7 @@ export default {
       border-color:$tagsActiveBorder !important;
       color:$tagsActiveColor;
    }
+   
     
    .el-tabs__nav .el-tabs__item:first-child .el-icon-close{
       display: none;
