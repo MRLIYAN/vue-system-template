@@ -68,7 +68,7 @@ const mutations = {
             return item.name == path
         })
         let filterArr = state.tagsVisitedRoute.filter((item,i) => {
-            return i>index-1
+            return i>=index
         })
         state.tagsVisitedRoute = [firstHome,...filterArr]
     },
