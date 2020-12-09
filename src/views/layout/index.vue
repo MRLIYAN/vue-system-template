@@ -17,6 +17,7 @@
            <div class="layout-right-cont" :class="isCollpase?'layout-right-cont-expand':''">
                <div class="bread-tags-link">
                     <tagsLink></tagsLink>
+                    <tagsMore></tagsMore>
                </div>
                <appMain />
            </div>
@@ -29,12 +30,14 @@ import slideMenu from './components/slideMenu/slideMenu'
 import appMain from './appMain'
 import breadCrumb from './components/breadCrumb'
 import tagsLink from './components/tagsLink/tagsLink'
+import tagsMore from './components/tagsMore.vue'
 export default {
     components:{
         slideMenu,
         appMain,
         breadCrumb,
-        tagsLink
+        tagsLink,
+        tagsMore
     },
     computed: {
         isCollpase() {

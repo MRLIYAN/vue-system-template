@@ -47,7 +47,52 @@ const mutations = {
             }
             router.push({path:state.tagsValue})
         }
-    }
+    },
+    closeOtherTags(state,path) {
+        if(state.tagsVisitedRoute.length<=2){
+            return false;
+        }
+        let firstHome = state.tagsVisitedRoute[0];
+        let filterArr = state.tagsVisitedRoute.filter(item => {
+            return item.name == path
+        })
+        state.tagsVisitedRoute = [firstHome,...filterArr]
+        
+    },
+    closeLeftTags(state,path) {
+        if(state.tagsVisitedRoute.length<=2){
+            return false;
+        }
+        let firstHome = state.tagsVisitedRoute[0];
+        let index = state.tagsVisitedRoute.findIndex(item => {
+            return item.name == path
+        })
+        let filterArr = state.tagsVisitedRoute.filter((item,i) => {
+            return i>index-1
+        })
+        state.tagsVisitedRoute = [firstHome,...filterArr]
+    },
+    closeRightTags(state,path) {
+        if(state.tagsVisitedRoute.length<=2){
+            return false;
+        }
+        let index = state.tagsVisitedRoute.findIndex(item => {
+            return item.name == path
+        })
+        let filterArr = state.tagsVisitedRoute.filter((item,i) => {
+            return i<=index
+        })
+        state.tagsVisitedRoute = filterArr
+        
+    },
+    closeAllTags(state) {
+        if(state.tagsVisitedRoute.length<=1){
+            return false;
+        }
+        state.tagsVisitedRoute = [state.tagsVisitedRoute[0]]
+        state.tagsValue = state.tagsVisitedRoute[0].name
+        router.push({path:state.tagsValue})
+    },
 }
 
 const actions = {
@@ -56,7 +101,19 @@ const actions = {
     },
     closeTagsRoute({commit},path) {
         commit("closeTagsRoute",path);
-    }
+    },
+    closeOtherTags({commit},path) {
+        commit("closeOtherTags",path);
+    },
+    closeLeftTags({commit},path) {
+        commit("closeLeftTags",path);
+    },
+    closeRightTags({commit},path) {
+        commit("closeRightTags",path);
+    },
+    closeAllTags({commit},path) {
+        commit("closeAllTags",path);
+    },
 }
 
 
