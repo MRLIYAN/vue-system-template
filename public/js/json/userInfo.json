@@ -123,6 +123,7 @@
             {
                 "path":"/menuThree",
                 "component":"layout",
+                "redirect":"/menuThree/menuThreeOne",
                 "meta":{
                     "title":"菜单3",
                     "isChild":"true",
