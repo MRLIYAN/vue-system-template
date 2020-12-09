@@ -49,9 +49,6 @@ const mutations = {
         }
     },
     closeOtherTags(state,path) {
-        if(state.tagsVisitedRoute.length<=2){
-            return false;
-        }
         //如果当前标签是主页，那就只保留主页，否则删除当前以及除主页的其他标签
         if(path == '/'||path == '/home'){
             state.tagsVisitedRoute = [state.tagsVisitedRoute[0]]
@@ -65,9 +62,6 @@ const mutations = {
         
     },
     closeLeftTags(state,path) {
-        if(state.tagsVisitedRoute.length<=2){
-            return false;
-        }
         //如果当前是主页，那就左侧没东西，不删，否则删除当前左侧的除主页的所有标签
         if(path == '/'||path == '/home'){
             return false;
@@ -83,9 +77,6 @@ const mutations = {
         }
     },
     closeRightTags(state,path) {
-        if(state.tagsVisitedRoute.length<=2){
-            return false;
-        }
         //如果当前是主页，那就只保留主页，否则删除右侧所有标签
         if(path == '/'||path == '/home'){
             state.tagsVisitedRoute = [state.tagsVisitedRoute[0]]
@@ -102,9 +93,6 @@ const mutations = {
     },
     closeAllTags(state) {
         //关闭所有，只保留主页，并跳转到主页
-        if(state.tagsVisitedRoute.length<=1){
-            return false;
-        }
         state.tagsVisitedRoute = [state.tagsVisitedRoute[0]]
         state.tagsValue = state.tagsVisitedRoute[0].name
         router.push({path:state.tagsValue})
