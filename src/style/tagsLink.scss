@@ -63,7 +63,10 @@
            border-color:$tagsActiveBorder !important;
            color:$tagsActiveColor;
         }
-        
+        .el-tabs__item .el-icon-close:hover{
+            background: $tagsActiveColor;
+            color:#fff;
+        }
          
         .el-tabs__nav .el-tabs__item:first-child .el-icon-close{
            display: none;
