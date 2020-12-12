@@ -4,10 +4,10 @@
            <div class="layout-top-left">
                <img class="logo" src="@/assets/logo.png" alt="">
                <h1 class="name">vue-system-template</h1>
-               <breadCrumb style="margin-left:20px;" />
+               <breadCrumb style="margin-left:20px; display:none;" />
            </div>
            <div class="layout-top-right">
-               <span @click="logoff">注销</span>
+               <rightPanel></rightPanel>
            </div>
        </div>
        <div class="layout-bottom">
@@ -30,27 +30,23 @@ import slideMenu from './components/slideMenu/slideMenu'
 import appMain from './appMain'
 import breadCrumb from './components/breadCrumb'
 import tagsLink from './components/tagsLink/tagsLink'
-import tagsMore from './components/tagsMore.vue'
+import tagsMore from './components/tagsMore'
+import rightPanel from './components/rightPanel/rightPanel'
 export default {
     components:{
         slideMenu,
         appMain,
         breadCrumb,
         tagsLink,
-        tagsMore
+        tagsMore,
+        rightPanel
     },
     computed: {
         isCollpase() {
             return this.$store.state.app.slideMenu
         }
-    },
-    methods: {
-        logoff() {
-            this.$store.dispatch('user/logoff').then(() => {
-                this.$router.push({path:'/login'})
-            })
-        }
     }
+    
 }
 </script>
 

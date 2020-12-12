@@ -6,7 +6,7 @@ const state = {
     routes:[],
     userInfo:{
         token:'',
-        username:'',
+        userName:'',
         role:''
     }
 }
@@ -19,7 +19,7 @@ const mutations = {
         state.routes = routes
     },
     getUserInfo(state,user) {
-        state.userInfo.user = user.userName;
+        state.userInfo.userName = user.userName;
         state.userInfo.role = user.role;
     },
     setToken(state,token){

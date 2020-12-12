@@ -11,6 +11,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 
+import '@/style/element.scss'
 import '@/style/slideMenu.scss'
 import '@/style/layout.scss'
 import '@/style/transition.scss'
