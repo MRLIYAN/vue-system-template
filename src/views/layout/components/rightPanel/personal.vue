@@ -10,10 +10,9 @@
             </span>
             <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item icon="el-icon-user">个人中心</el-dropdown-item>
-                <el-dropdown-item icon="el-icon-s-platform">
-                    <a href="https://github.com/MRLIYAN/vue-system-template" target="_target"
-                        style="text-decoration:none; color:inherit;">Github</a>
-                </el-dropdown-item>
+                <a href="https://github.com/MRLIYAN/vue-system-template" target="_target" style="text-decoration:none; color:inherit;">
+                    <el-dropdown-item icon="el-icon-s-platform">Github</el-dropdown-item>
+                </a>
                 <el-dropdown-item icon="el-icon-unlock" @click.native="logoff">退出</el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
