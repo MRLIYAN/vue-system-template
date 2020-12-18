@@ -4,7 +4,7 @@
            <div class="layout-top-left">
                <img class="logo" src="@/assets/logo.png" alt="">
                <h1 class="name">vue-system-template</h1>
-               <breadCrumb style="margin-left:20px; display:none;" />
+               <breadCrumb style="margin-left:20px;" />
            </div>
            <div class="layout-top-right">
                <rightPanel></rightPanel>
