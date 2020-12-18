@@ -86,7 +86,14 @@
         .main-container{
             width:100%;
             height: calc(100% - 50px);
-            padding: 10px;
+            background:#f5f8f9;
+            overflow: hidden;
+            overflow-y:auto;
+
+            .main-content-container{
+                padding:10px;
+                padding-bottom: 0;
+            }
         }
     }
     .layout-right-cont-expand{

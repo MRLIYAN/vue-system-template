@@ -1,6 +1,6 @@
 <template>
    <div class="home-container">
-       这是home组件，主页
+       aaaa
    </div>
 </template>
 
@@ -12,6 +12,6 @@ export default {
 
 <style lang="scss" scoped>
 .home-container{
-    height: 100%;
+    height: 1200px;
 }
 </style>
