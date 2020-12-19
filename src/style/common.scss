@@ -1,0 +1,76 @@
+$border:1px solid #000;
+.box-size-ie{
+    box-sizing: border-box;
+}
+.box-size-content{
+    box-sizing: content-box;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-h-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flex-h-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-h-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-z-start{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flex-z-between{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-z-around{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.clear-float::after{
+    content: "";
+    width:0;
+    height: 0;
+    display: inline-block;
+    clear: both;
+    visibility: hidden;
+}
+
+
+
+
+.bg-white{
+    background: #fff;
+}
+
+.common-border{
+    border:$border
+}
+
+.common-boxShadow{
+    box-shadow:0 0 5px rgba(200,200,200,.5);
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

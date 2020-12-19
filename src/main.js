@@ -11,6 +11,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 
+import VueAnimateNumber from 'vue-animate-number'
+Vue.use(VueAnimateNumber)
+
+import '@/style/common.scss'
 import '@/style/element.scss'
 import '@/style/slideMenu.scss'
 import '@/style/layout.scss'
