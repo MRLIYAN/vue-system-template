@@ -31,12 +31,12 @@ export default {
         initTime(){
             var date = new Date();
             var nowDate = date.getHours().toLocaleString('chinese', { hour12: false })
-            if(nowDate>=2&&nowDate<5){
-                this.timeTipMsg = '凌晨了，不要熬夜了，记得休息哦，身体更重要！！！'
+            if(nowDate>=0&&nowDate<5){
+                this.timeTipMsg = '凌晨了，不要熬夜了，记得休息，身体更重要哦！！！'
             }else if(nowDate>=5&&nowDate<10){
-                this.timeTipMsg = '早上好，新的一天开始了。';
+                this.timeTipMsg = '早上好，新的一天开始了，活气满满。';
             }else if(nowDate>=10&&nowDate<13){
-                this.timeTipMsg = '中午好，忙了一上午了，记得饭后午休哦！！！'
+                this.timeTipMsg = '中午好，忙了一上午了，记得饭后小憩哦！！！'
             }else if(nowDate>=13&&nowDate<18){
                 this.timeTipMsg = '下午好，要不要来点下午茶。'
             }else if(nowDate>=18&&nowDate<22){
