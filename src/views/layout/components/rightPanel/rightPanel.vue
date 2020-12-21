@@ -60,7 +60,6 @@ export default {
          } else {
          this.isFullscreen = winFlag || isFull
          }
-         console.log('winFlag || isFull', winFlag, isFull)
       }
    }
 }

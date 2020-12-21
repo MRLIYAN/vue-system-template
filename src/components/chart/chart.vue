@@ -45,8 +45,9 @@ export default {
             this.myChart.clear();
             let option = this.option;
             this.myChart.setOption(option);
+            let that = this;
             window.addEventListener("resize",function(){
-                this.myChart.resize();
+                that.myChart.resize();
             })
         }
     }
