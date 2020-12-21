@@ -1,5 +1,5 @@
 <template>
-   <div class="personal-container flex-h-around">
+   <div class="personal-container flex-h-around animate__animated animate__zoomIn">
         <div class="head flex-center">
             <img src="@/assets/images/user/head.jpg" alt="">
         </div>

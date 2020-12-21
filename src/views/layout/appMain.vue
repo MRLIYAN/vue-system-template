@@ -17,3 +17,10 @@ export default {
    
 }
 </script>
+<style lang="scss" scoped>
+.main-container{
+    ::v-deep .el-scrollbar__bar.is-horizontal{
+        display: none;
+    }
+}
+</style>

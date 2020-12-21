@@ -4,18 +4,28 @@
             <personal />
         </div>
         <div class="container home-chart">
-            <homeBlock style="display:none;"/>
+            <homeChart />
+        </div>
+        <div class="container link">
+            <homeBlock />
+        </div>
+        <div class="table">
+            <homeFoot />
         </div>
     </div>
 </template>
 
 <script>
 import personal from './components/personal'
+import homeChart from './components/homeChart'
 import homeBlock from './components/homeBlock'
+import homeFoot from './components/homeFoot'
 export default {
     components:{
         personal,
-        homeBlock
+        homeBlock,
+        homeChart,
+        homeFoot
     }
 }
 </script>
