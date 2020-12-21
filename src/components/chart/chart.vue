@@ -1,5 +1,5 @@
 <template>
-    <div :id="id" style="width:100%;height:100%;"></div>
+    <div :id="id" class="charts-container" style="width:100%;height:100%;"></div>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
     name:"chart",
     data() {
         return {
-
+            myChart:null,
         }
     },
     props: {
@@ -24,14 +24,29 @@ export default {
     mounted() {
         this.initChart();
     },
+    beforeDestroy() {
+        if (!this.chart) {
+            return
+        }
+        this.chart.dispose()
+        this.chart = null
+    },
+    watch:{
+        '$store.state.app.slideMenu'() {
+            //延时效果必须加，因为菜单收缩有个动画时间，否则不起作用
+            setTimeout(() => {
+                this.myChart.resize();
+            },300)
+        }
+    },
     methods: {
         initChart() {
-            let myChart = echarts.init(document.getElementById(this.id));
-            myChart.clear();
+            this.myChart = echarts.init(document.getElementById(this.id));
+            this.myChart.clear();
             let option = this.option;
-            myChart.setOption(option);
+            this.myChart.setOption(option);
             window.addEventListener("resize",function(){
-                myChart.resize();
+                this.myChart.resize();
             })
         }
     }
