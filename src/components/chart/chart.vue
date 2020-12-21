@@ -25,11 +25,11 @@ export default {
         this.initChart();
     },
     beforeDestroy() {
-        if (!this.chart) {
+        if (!this.myChart) {
             return
         }
-        this.chart.dispose()
-        this.chart = null
+        this.myChart.dispose()
+        this.myChart = null
     },
     watch:{
         '$store.state.app.slideMenu'() {
