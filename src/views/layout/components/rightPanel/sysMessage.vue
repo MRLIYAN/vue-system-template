@@ -1,6 +1,6 @@
 <template>
     <div class="sysMessage-container" title="消息">
-        <el-badge :value="12" class="item">
+        <el-badge class="item" :value="value" :max="99" :hidden="value<=0?true:false">
             <span class="icon el-icon-message-solid"></span>
         </el-badge>
     </div>
@@ -8,7 +8,11 @@
 
 <script>
 export default {
-   
+    data() {
+        return {
+            value:100
+        }
+    },
 }
 </script>
 
