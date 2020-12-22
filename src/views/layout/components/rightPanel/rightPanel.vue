@@ -4,6 +4,7 @@
          <img v-if="isFullscreen==false" title="全屏" @click="toggleFullscreen" src="@/assets/images/rightPanel/fullScreen.png" alt="">
          <img v-if="isFullscreen==true" title="退出全屏" @click="toggleFullscreen" src="@/assets/images/rightPanel/exit-fullScreen.png" alt="">
       </span>
+      <sysMessage />
       <personal />
    </div>
 </template>
@@ -11,6 +12,7 @@
 <script>
 import personal from './personal'
 import screenfull from 'screenfull'
+import sysMessage from './sysMessage'
 export default {
    data() {
       return {
@@ -18,7 +20,8 @@ export default {
       }
    },
    components: {
-      personal
+      personal,
+      sysMessage
    },
    created() {
       // 监听事件
