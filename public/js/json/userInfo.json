@@ -209,7 +209,16 @@
                             "title":"个人中心",
                             "hidden":"false"
                         }
-                   }
+                    },
+                    {
+                        "path":"/person/systemMsg",
+                        "name":"component",
+                        "component":"views/person/systemMsg/systemMsg",
+                        "meta":{
+                            "title":"个人消息",
+                            "hidden":"false"
+                        }
+                    }
                 ]
             }
 
