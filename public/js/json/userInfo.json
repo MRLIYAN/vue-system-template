@@ -142,6 +142,75 @@
                         "hidden":"false"
                     }
                 }]
+            },
+            {
+                "path":"/component",
+                "name":"component",
+                "component":"layout",
+                "redirect":"/component/table",
+                "meta":{
+                    "title":"组件",
+                    "icon":"el-icon-set-up",
+                    "isChild":"true",
+                    "hidden":"false"
+                },
+                "children":[
+                   {
+                        "path":"/component/table",
+                        "name":"component",
+                        "component":"views/component/table",
+                        "redirect":"/component/table/tableIndex",
+                        "meta":{
+                            "title":"表格",
+                            "icon":"el-icon-set-up",
+                            "isChild":"true",
+                            "hidden":"false"
+                        },
+                        "children":[
+                            {
+                                 "path":"/component/table/tableIndex",
+                                 "name":"component",
+                                 "component":"views/component/table/tableIndex/tableIndex",
+                                 "meta":{
+                                     "title":"基础表格",
+                                     "hidden":"false"
+                                 }
+                            },
+                            {
+                                "path":"/component/table/tableEdit",
+                                "name":"component",
+                                "component":"views/component/table/tableEdit/tableEdit",
+                                "meta":{
+                                    "title":"编辑表格",
+                                    "hidden":"false"
+                                }
+                           }
+                        ]
+                   }
+                ]
+            },
+            {
+                "path":"/person",
+                "name":"component",
+                "component":"layout",
+                "redirect":"/person/personCenter",
+                "meta":{
+                    "title":"个人设置",
+                    "icon":"el-icon-user",
+                    "isChild":"true",
+                    "hidden":"false"
+                },
+                "children":[
+                   {
+                        "path":"/person/personCenter",
+                        "name":"component",
+                        "component":"views/person/personCenter/personCenter",
+                        "meta":{
+                            "title":"个人中心",
+                            "hidden":"false"
+                        }
+                   }
+                ]
             }
 
         ]
