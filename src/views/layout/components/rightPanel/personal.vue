@@ -9,7 +9,9 @@
                 <i class="el-icon-arrow-down el-icon--right" :class="dropStatus?'el-icon-transform':''"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item icon="el-icon-user">个人中心</el-dropdown-item>
+                <el-dropdown-item icon="el-icon-user">
+                    <router-link :to="{path:'/person/personCenter'}" tag="span">个人中心</router-link>
+                </el-dropdown-item>
                 <a href="https://github.com/MRLIYAN/vue-system-template" target="_target" style="text-decoration:none; color:inherit;">
                     <el-dropdown-item icon="el-icon-s-platform">Github</el-dropdown-item>
                 </a>
