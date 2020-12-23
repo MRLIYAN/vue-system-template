@@ -21,6 +21,7 @@ import homeChart from './components/homeChart'
 import homeBlock from './components/homeBlock'
 import homeFoot from './components/homeFoot'
 export default {
+    name:"home",
     components:{
         personal,
         homeBlock,

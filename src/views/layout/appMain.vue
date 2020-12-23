@@ -3,7 +3,7 @@
         <el-scrollbar class="el-scrollbar">
             <div class="main-content-container">
                 <transition name="fade-slide" mode="out-in">
-                    <keep-alive>
+                    <keep-alive :exclude="noKeepAliveRoutes">
                         <router-view :key="$route.path"></router-view>
                     </keep-alive>
                 </transition>
@@ -14,7 +14,11 @@
 
 <script>
 export default {
-   
+    data() {
+        return {
+            noKeepAliveRoutes:this.$store.state.user.noKeepAliveRoutes
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>

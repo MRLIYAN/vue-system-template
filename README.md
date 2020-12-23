@@ -51,6 +51,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
                 是否在面包屑中显示
         breadCrumbClick（true（点击可跳转）/false（点击不可跳转））：
                 是否允许面包屑点击，并且跳转路由，添加改属性，面包屑不可点击，点击不会跳转路由
+        keepAlive（true/false）：
+                该组件是否允许keep-alive开启缓存，默认不加开启，不缓存的需要加false
 
             
 

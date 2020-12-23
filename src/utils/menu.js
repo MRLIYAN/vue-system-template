@@ -26,9 +26,30 @@ function loadingComponent(component){
 }
 
 
+let noAliveRoutes = [];
+function eachNoKeepAliveRoutes(data){
+    for(let i=0; i<data.length; i++){
+        if(data[i].redirect || data[i].meta.isChild=='true'){
+            eachNoKeepAliveRoutes(data[i].children)
+        }else{
+            if(data[i]?.meta?.keepAlive == 'false'){
+                noAliveRoutes.push(data[i]?.name)
+            }else{
+                continue;
+            } 
+        }
+    }
+}
+
+function dealNoKeepAliveRoutes(data){
+    eachNoKeepAliveRoutes(data);
+    store.dispatch('user/addAliveRoutes',noAliveRoutes)
+}
+
 export function dealRoute(data){
     menudata = data;
     dealMenu(menudata);
+    dealNoKeepAliveRoutes(menudata);//遍历不需要缓存的路由名称
     menudata.push(...notfoundrouter);
     store.dispatch('user/addMenu',menudata)
 }
