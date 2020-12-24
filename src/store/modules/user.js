@@ -4,7 +4,8 @@ import {resetRouter} from '@/router'
 
 const state = {
     routes:[],
-    noKeepAliveRoutes:[],
+    keepAliveRoutes:[],
+    noAliveRoutes:[],
     userInfo:{
         token:'',
         userName:'',
@@ -17,8 +18,11 @@ const mutations = {
         //添加菜单
         state.routes=data;
     },
-    addAliveRoutes(state,routes = []) {
-        state.noKeepAliveRoutes = routes
+    addkeepAliveRoutes(state,routes = []) {
+        state.keepAliveRoutes = routes;
+    },
+    addNoAliveRoutes(state,routes = []) {
+        state.noAliveRoutes = routes;
     },
     removeRoutes(state,routes = []) {
         state.routes = routes
@@ -74,9 +78,6 @@ const actions = {
     addMenu({commit},data){
         commit("addMenu",data)
     },
-    addAliveRoutes({commit},routes){
-        commit("addAliveRoutes",routes)
-    }
 }
 
 const getters = {

@@ -1,6 +1,7 @@
 import VueCookies from 'vue-cookies'
 const state = {
     slideMenu:VueCookies.get('slideMenu') == 'true' ? true : false,
+    refresh:true
 }
 
 const mutations = {
@@ -11,6 +12,9 @@ const mutations = {
         }else{
             VueCookies.set('slideMenu',false,0)
         }
+    },
+    toggleRefresh(state){
+        state.refresh = !state.refresh;
     }
 }
 

@@ -3,21 +3,28 @@ const state = {
     tagsVisitedRoute:[{
         title:"主页",
         icon:"el-icon-s-home",
-        name:"/home"
+        path:"/home",
+        name:"home",
+        meta:{
+            title:"主页",
+            breadCrumb:"false",
+            icon:"el-icon-s-home",
+            keepAlive:"false"
+        }
     }],
     tagsValue:'/home',
 }
 
 const mutations = {
     addVisitedRoute(state,route) {
-        state.tagsValue = route.name;
+        state.tagsValue = route.path;
         //先判断是不是首页，不是首页往下走，否则结束
-        if(route.name == '/' || route.name == '/home'){
+        if(route.path == '/' || route.path == '/home'){
             return false;
         }
         //循环判断有没有当前的路由，有不添加
         let hasRoute = state.tagsVisitedRoute.some(item => {
-            return item.name == route.name
+            return item.path == route.path
         })
         if(hasRoute == false){
             state.tagsVisitedRoute.push(route);
@@ -29,7 +36,7 @@ const mutations = {
         let routeAll = state.tagsVisitedRoute;
         //获取关闭标签存储中对应的索引
         let index = routeAll.findIndex(item => {
-            return item.name == path;
+            return item.path == path;
         })
         //返回不包含删除项的索引的标签，删除了当前关闭的标签
         state.tagsVisitedRoute = routeAll.filter((item,i) => {
@@ -41,9 +48,9 @@ const mutations = {
         */
         if(path == state.tagsValue){
             if(index < state.tagsVisitedRoute.length-1){
-                state.tagsValue = state.tagsVisitedRoute[index].name
+                state.tagsValue = state.tagsVisitedRoute[index].path
             }else{
-                state.tagsValue = state.tagsVisitedRoute[state.tagsVisitedRoute.length-1].name
+                state.tagsValue = state.tagsVisitedRoute[state.tagsVisitedRoute.length-1].path
             }
             router.push({path:state.tagsValue})
         }
@@ -55,7 +62,7 @@ const mutations = {
         }else{
             let firstHome = state.tagsVisitedRoute[0];
             let filterArr = state.tagsVisitedRoute.filter(item => {
-                return item.name == path
+                return item.path == path
             })
             state.tagsVisitedRoute = [firstHome,...filterArr]
         }
@@ -68,7 +75,7 @@ const mutations = {
         }else{
             let firstHome = state.tagsVisitedRoute[0];
             let index = state.tagsVisitedRoute.findIndex(item => {
-                return item.name == path
+                return item.path == path
             })
             let filterArr = state.tagsVisitedRoute.filter((item,i) => {
                 return i>=index
@@ -82,7 +89,7 @@ const mutations = {
             state.tagsVisitedRoute = [state.tagsVisitedRoute[0]]
         }else{
             let index = state.tagsVisitedRoute.findIndex(item => {
-                return item.name == path
+                return item.path == path
             })
             let filterArr = state.tagsVisitedRoute.filter((item,i) => {
                 return i<=index
@@ -94,7 +101,7 @@ const mutations = {
     closeAllTags(state) {
         //关闭所有，只保留主页，并跳转到主页
         state.tagsVisitedRoute = [state.tagsVisitedRoute[0]]
-        state.tagsValue = state.tagsVisitedRoute[0].name
+        state.tagsValue = state.tagsVisitedRoute[0].path
         router.push({path:state.tagsValue})
     },
 }

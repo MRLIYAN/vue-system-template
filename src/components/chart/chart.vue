@@ -25,11 +25,16 @@ export default {
         this.initChart();
     },
     beforeDestroy() {
+        let that = this;
+        window.removeEventListener("resize",function(){
+            that.myChart.resize();
+        })
         if (!this.myChart) {
             return
         }
         this.myChart.dispose()
-        this.myChart = null
+        this.myChart = null;
+       
     },
     watch:{
         '$store.state.app.slideMenu'() {

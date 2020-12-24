@@ -73,7 +73,8 @@
                                 "meta":{
                                     "title":"菜单1-2-1",
                                     "breadCrumb":"true",
-                                    "hidden":"false"
+                                    "hidden":"false",
+                                    "keepAlive":"true"
                                 }
                             },
                             {

@@ -3,14 +3,14 @@
       <el-tabs v-model="$store.state.tagsLink.tagsValue" type="card" closable @tab-remove="closeTab" @tab-click="toRoute">
          <el-tab-pane
             v-for="item in visitedRoutes"
-            :key="item.name"
-            :label="item.title"
-            :name="item.name"
+            :key="item.path"
+            :label="item.meta.title"
+            :name="item.path"
             @click="toRoute(item)"
          >
          <span slot="label">
-            <span class="tags-icon" :class="item.icon" style="margin-right:5px; font-size:16px;"></span>
-            <span class="tags-font">{{item.title}}</span>
+            <span class="tags-icon" :class="item.meta.icon" style="margin-right:5px; font-size:16px;"></span>
+            <span class="tags-font">{{item.meta.title}}</span>
          </span>
          </el-tab-pane>
       </el-tabs>
@@ -48,10 +48,7 @@ export default {
       },
       addVisitedRoutes(){
          let route = this.$route;
-         let routeObj = {};
-         routeObj.title = route.meta.title;
-         routeObj.name = route.path;
-         routeObj.icon = route.meta?.icon;
+         let routeObj = route;
          this.$store.dispatch("tagsLink/addVisitedRoute",routeObj);
       }
    },
