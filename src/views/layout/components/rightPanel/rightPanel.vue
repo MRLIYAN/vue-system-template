@@ -1,6 +1,6 @@
 <template>
    <div class="rightPanel-container">
-      <refresh />
+      <refreshView />
       <span class="full-screen">
          <img v-if="isFullscreen==false" title="全屏" @click="toggleFullscreen" src="@/assets/images/rightPanel/fullScreen.png" alt="">
          <img v-if="isFullscreen==true" title="退出全屏" @click="toggleFullscreen" src="@/assets/images/rightPanel/exit-fullScreen.png" alt="">
@@ -14,7 +14,7 @@
 import personal from './components/personal'
 import screenfull from 'screenfull'
 import sysMessage from './components/sysMessage'
-import refresh from './components/refresh'
+import refreshView from './components/refreshView'
 export default {
    data() {
       return {
@@ -24,7 +24,7 @@ export default {
    components: {
       personal,
       sysMessage,
-      refresh
+      refreshView
    },
    created() {
       // 监听事件

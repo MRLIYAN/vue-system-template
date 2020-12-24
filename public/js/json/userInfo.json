@@ -74,7 +74,7 @@
                                     "title":"菜单1-2-1",
                                     "breadCrumb":"true",
                                     "hidden":"false",
-                                    "keepAlive":"true"
+                                    "keepAlive":"false"
                                 }
                             },
                             {
@@ -146,10 +146,10 @@
                 }]
             },
             {
-                "path":"/component",
-                "name":"component",
+                "path":"/mycomponent",
+                "name":"mycomponent",
                 "component":"layout",
-                "redirect":"/component/table",
+                "redirect":"/mycomponent/table",
                 "meta":{
                     "title":"组件",
                     "icon":"el-icon-set-up",
@@ -158,10 +158,10 @@
                 },
                 "children":[
                    {
-                        "path":"/component/table",
-                        "name":"component",
-                        "component":"views/component/table",
-                        "redirect":"/component/table/tableIndex",
+                        "path":"/mycomponent/table",
+                        "name":"table",
+                        "component":"views/mycomponent/table",
+                        "redirect":"/mycomponent/table/tableIndex",
                         "meta":{
                             "title":"表格",
                             "icon":"el-icon-set-up",
@@ -170,18 +170,18 @@
                         },
                         "children":[
                             {
-                                 "path":"/component/table/tableIndex",
-                                 "name":"component",
-                                 "component":"views/component/table/tableIndex/tableIndex",
+                                 "path":"/mycomponent/table/tableIndex",
+                                 "name":"tableIndex",
+                                 "component":"views/mycomponent/table/tableIndex/tableIndex",
                                  "meta":{
                                      "title":"基础表格",
                                      "hidden":"false"
                                  }
                             },
                             {
-                                "path":"/component/table/tableEdit",
-                                "name":"component",
-                                "component":"views/component/table/tableEdit/tableEdit",
+                                "path":"/mycomponent/table/tableEdit",
+                                "name":"tableEdit",
+                                "component":"views/mycomponent/table/tableEdit/tableEdit",
                                 "meta":{
                                     "title":"编辑表格",
                                     "hidden":"false"
