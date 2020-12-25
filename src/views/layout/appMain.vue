@@ -23,7 +23,7 @@ export default {
         getAliveRoute(){
             let aliveRoutes = [];
             this.$store.state.tagsLink.tagsVisitedRoute.forEach(item => {
-                if(item?.meta?.keepAlive != 'false'){
+                if(!item?.meta?.keepAlive || item.meta.keepAlive != 'false'){
                     if(!aliveRoutes.includes(item.name)){
                         aliveRoutes.push(item.name);
                     }
@@ -38,6 +38,8 @@ export default {
             }); 
             //把缓存的路由放到vuex中，为了和刷新功能相对应，可以直接操作数据。
             this.$store.commit("user/addkeepAliveRoutes",aliveRoutes)
+            console.log("-------缓存的数据--------------");
+            console.log(this.$store.state.user.keepAliveRoutes);
         }
     }
 }

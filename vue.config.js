@@ -12,4 +12,8 @@ module.exports = {
         open:true,
         
     },
+    chainWebpack: config => {
+        // 修复HMR
+        config.resolve.symlinks(true);
+    }
 }

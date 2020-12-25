@@ -1,7 +1,6 @@
 import router from '@/router'
 const state = {
     tagsVisitedRoute:[{
-        title:"主页",
         icon:"el-icon-s-home",
         path:"/home",
         name:"home",

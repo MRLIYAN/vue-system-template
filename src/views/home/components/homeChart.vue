@@ -55,7 +55,7 @@
                     <span class="font">订单信息</span>
                 </div>                 
                 <div class="cont">
-                    <chart v-if="orderOption" :id="orderId" :option="orderOption" />
+                    <chart v-if="orderOption" :option="orderOption" />
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                 <span class="font">销售额</span>
             </div>                 
             <div class="cont">
-                <chart v-if="priceOption" :id="priceId"  :option="priceOption" /> 
+                <chart v-if="priceOption"  :option="priceOption" /> 
             </div>
         </div>
     </div>
@@ -80,9 +80,7 @@ let echarts = require('echarts');
 export default {
     data() {
         return {
-            orderId:"",
             orderOption:null,
-            priceId:"",
             priceOption:null
         }
     },
@@ -100,7 +98,6 @@ export default {
                 url:'homeChart.json',
                 mehotd:'get'
             }).then(res => {
-                this.orderId = "orderChart";
                 let dataX = res.result.data.order.dataX;
                 let dataY = res.result.data.order.dataY;
                 let max = 0;
@@ -164,7 +161,6 @@ export default {
                 url:'homeChart.json',
                 mehotd:'get'
             }).then(res => {
-                this.priceId = "priceChart";
                 let dataX = res.result.data.price.dataX;
                 let dataY = res.result.data.price.dataY;
                 let option = {

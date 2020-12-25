@@ -1,5 +1,5 @@
 <template>
-    <div :id="id" class="charts-container" style="width:100%;height:100%;"></div>
+    <div ref="chartContainer" class="charts-container" style="width:100%;height:100%;"></div>
 </template>
 
 <script>
@@ -12,10 +12,6 @@ export default {
         }
     },
     props: {
-        id:{
-            type:String,
-            require:true
-        },
         option:{
             type:Object,
             require:true
@@ -23,12 +19,9 @@ export default {
     },
     mounted() {
         this.initChart();
+        //window.onresize = this.myChart.resize;
     },
     beforeDestroy() {
-        let that = this;
-        window.removeEventListener("resize",function(){
-            that.myChart.resize();
-        })
         if (!this.myChart) {
             return
         }
@@ -46,13 +39,14 @@ export default {
     },
     methods: {
         initChart() {
-            this.myChart = echarts.init(document.getElementById(this.id));
+            this.myChart = echarts.init(this.$refs.chartContainer);
             this.myChart.clear();
-            let option = this.option;
-            this.myChart.setOption(option);
+            this.myChart.setOption(this.option);
             let that = this;
             window.addEventListener("resize",function(){
-                that.myChart.resize();
+                if(that.myChart){
+                    that.myChart.resize();
+                }
             })
         }
     }
