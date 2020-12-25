@@ -31,7 +31,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## 菜单规则：
 ### 字段介绍
     path：（String|必填）和vue路由对象一致，存放访问路由的路径
-    component：（String|必填）和vue路由对象一致，存放路由在项目中对应的路径
+    component：（String|必填）和vue路由对象一致，存放路由在项目中对应的路径，一级路由必须是layout，其他的就是路由自己。
     name：（String|必填）和vue路由对象一致，添加路由的name属性，主要用于keep-alive缓存
     redirect：（String| 一级路由必填，重定向到子路由。有子菜单的折叠菜单的路由必填，默认重定向到第一个子菜单）
                 和vue路由对象一致，存放要重定向的路径，用于一级菜单没有子菜单的情况下，重定向用；以及面包屑点击重定向到第一个子路由用，一般
