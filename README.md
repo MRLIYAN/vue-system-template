@@ -39,7 +39,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     meta对象：定义其他的一些属性
         title（String|必填）：
                 路由的标题，对应菜单中要显示的名字，必填，不填菜单空了，没名字了。
-        isChild（true（有子级菜单）/false（没有子菜单|必填），也可以用字符串的true,false，判断没用全等）：
+        isChild（true（有子级菜单|必填）/false（没有子菜单|无要求），也可以用字符串的true,false，判断没用全等）：
                 判断是否有子级菜单的，children不能作为判断子级菜单的标准，因为当一级菜单跳转时，必须要添加一个children子级路由，并且重定向到
                 该子级路由中，如果当一级菜单只有一个子级路由的时候，都有子级路由，情况重复。不填表示默认没有子级菜单，有子级菜单，必填，推荐有
                 没有都是必填项。
