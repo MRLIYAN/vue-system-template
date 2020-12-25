@@ -1,5 +1,5 @@
 <template>
-    <div class="menuTree-container" v-if="routeItem.meta && routeItem.meta.hidden == 'false'">
+    <div class="menuTree-container" v-if="routeItem.meta && routeItem.meta.hidden != 'true'">
         <!-- 根据isChild判断是否有子级菜单，有则循环组件
             -->
         <template v-if="routeItem.meta.isChild != 'true'">

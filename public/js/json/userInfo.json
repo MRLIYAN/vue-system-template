@@ -12,7 +12,6 @@
                 "component":"layout",
                 "redirect":"/home",
                 "meta":{
-                    "hidden":"false",
                     "breadCrumb":"true"
                 },
                 "children":[
@@ -23,8 +22,7 @@
                         "meta":{
                             "title":"主页",
                             "breadCrumb":"false",
-                            "icon":"el-icon-s-home",
-                            "keepAlive":"false"
+                            "icon":"el-icon-s-home"
                         }
                     }
                 ]
@@ -40,7 +38,6 @@
                     "isChild":"true",
                     "breadCrumb":"true",
                     "breadCrumbClick":"false",
-                    "hidden":"false",
                     "icon":"el-icon-s-help"
                 },
                 "children":[
