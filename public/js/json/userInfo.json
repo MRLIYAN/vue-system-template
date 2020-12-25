@@ -23,7 +23,8 @@
                         "meta":{
                             "title":"主页",
                             "breadCrumb":"false",
-                            "icon":"el-icon-s-home"
+                            "icon":"el-icon-s-home",
+                            "keepAlive":"false"
                         }
                     }
                 ]

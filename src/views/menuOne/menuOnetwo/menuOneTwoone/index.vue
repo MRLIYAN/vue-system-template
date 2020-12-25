@@ -222,5 +222,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .left{
+        width:30%;
+        height:500px;
+        margin-right:20px;
+    }
+    .right{
+        flex:1;
+        height:500px;
+    }
 
+    .left-top{
+        width:100%; height:200px;
+        background:linear-gradient(to right,#3da3f7,#479bf5,#5790f7,#6685fa,#6e83f8);
+        color:#fff;
+    }
+    .left-chart{
+        width:100%; height:290px;
+        margin-top: 20px;
+    }
+
+    .block{
+        border-radius:10px;
+        overflow: hidden;
+    }
+    .block .title{
+        width:100%; height:45px;padding:0px 15px;
+        border-bottom:1px solid rgba(240,240,240);
+        display:flex; justify-content: flex-start; align-items: center;
+    }
+    .block .title .icon{
+        display: inline-block;
+        width:25px; height:25px; margin-right: 10px;
+        img{
+            display: inline-block;
+            width:100%; height:100%;
+        }
+    }
+    .block .cont{
+        width:100%; height:calc(100% - 45px);
+        padding:10px 15px;
+    }
+
+    .visit-block div{
+        margin:30px 0;
+    }
+    .visit-block .font{
+        font-size: 18px;
+    }
+    .visit-block .number{
+        font-size: 20px;
+    }
 </style>

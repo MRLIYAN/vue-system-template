@@ -26,6 +26,9 @@ export default {
             if(!noAliveRoutes.includes(this.$route.name)){
                 noAliveRoutes.push(this.$route.name);
             }
+            if(!this.$route.matched){
+                return false;
+            }
             //循环遍历当前路由得matched，防止多级路由出现不刷新的情况，把路由得父级路由全都加上，防止keep-alive对多级路由不起作用
             this.$route.matched.forEach(item => {
                 if(!noAliveRoutes.includes(item.name)){

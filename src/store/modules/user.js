@@ -4,6 +4,7 @@ import {resetRouter} from '@/router'
 
 const state = {
     routes:[],
+    home:[],
     keepAliveRoutes:[],
     noAliveRoutes:[],
     userInfo:{
@@ -17,6 +18,9 @@ const mutations = {
     addMenu(state,data){
         //添加菜单
         state.routes=data;
+    },
+    addHome(state,home){
+        state.home = home;
     },
     addkeepAliveRoutes(state,routes = []) {
         state.keepAliveRoutes = routes;

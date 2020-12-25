@@ -29,6 +29,9 @@ export default {
                     }
                     //下面循环matched，解决多级路由缓存失效问题，把路由所有父级路由也加上，从而实现多级路由可以缓存的效果
                     let route = item.matched;
+                    if(!route){
+                        return false;
+                    }
                     route.forEach(item => {
                         if(item.name && !aliveRoutes.includes(item.name)){
                             aliveRoutes.push(item.name);
@@ -38,8 +41,6 @@ export default {
             }); 
             //把缓存的路由放到vuex中，为了和刷新功能相对应，可以直接操作数据。
             this.$store.commit("user/addkeepAliveRoutes",aliveRoutes)
-            console.log("-------缓存的数据--------------");
-            console.log(this.$store.state.user.keepAliveRoutes);
         }
     }
 }

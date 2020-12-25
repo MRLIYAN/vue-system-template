@@ -1,20 +1,13 @@
 import router from '@/router'
 const state = {
-    tagsVisitedRoute:[{
-        icon:"el-icon-s-home",
-        path:"/home",
-        name:"home",
-        meta:{
-            title:"主页",
-            breadCrumb:"false",
-            icon:"el-icon-s-home",
-            keepAlive:"false"
-        }
-    }],
+    tagsVisitedRoute:[],
     tagsValue:'/home',
 }
 
 const mutations = {
+    initVisitedRoute(state,home){
+        state.tagsVisitedRoute = [home];
+    },
     addVisitedRoute(state,route) {
         state.tagsValue = route.path;
         //先判断是不是首页，不是首页往下走，否则结束
