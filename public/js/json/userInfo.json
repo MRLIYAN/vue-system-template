@@ -21,7 +21,7 @@
                         "name":"home",
                         "meta":{
                             "title":"主页",
-                            "breadCrumb":"false",
+                            "breadCrumb":"true",
                             "icon":"el-icon-s-home"
                         }
                     }

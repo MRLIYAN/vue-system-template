@@ -4,7 +4,7 @@
            <div class="layout-top-left">
                <img class="logo" src="@/assets/logo.png" alt="">
                <h1 class="name">vue-system-template</h1>
-               <breadCrumb style="margin-left:20px;" />
+               <breadCrumb v-if="settings.breadCrumb" style="margin-left:20px;" />
            </div>
            <div class="layout-top-right">
                <rightPanel></rightPanel>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import settings from '@/settings.js'
 import slideMenu from './components/slideMenu/slideMenu'
 import appMain from './appMain'
 import breadCrumb from './components/breadCrumb'
@@ -33,6 +34,11 @@ import tagsLink from './components/tagsLink/tagsLink'
 import tagsMore from './components/tagsMore'
 import rightPanel from './components/rightPanel/rightPanel'
 export default {
+    data() {
+        return {
+            settings,
+        }
+    },
     components:{
         slideMenu,
         appMain,

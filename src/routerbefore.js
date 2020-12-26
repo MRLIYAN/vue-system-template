@@ -3,12 +3,14 @@ import store from '@/store'
 import { Message } from 'element-ui'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import {setPageTitle} from '@/utils/setPageTitle'
 
 import {getToken,removeToken} from '@/utils/user.js'
 
 const whiteList = ['/login']; 
 router.beforeEach(async(to,from,next) => {
     NProgress.start();
+    setPageTitle(to.meta.title)
     let token = getToken();
     if(token){
         // 保存在store中路由不为空则放行 (动态路由添加后需要保存在某个地方，防止页面被刷新后找不到路由)

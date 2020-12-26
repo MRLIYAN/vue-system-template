@@ -4,7 +4,7 @@
             <transition-group name="breadcrumb" appear>
                 <!-- 如果有breadCrumbClick并且还等于false，不允许点击跳转路由，比如带有折叠的菜单，点击肯定不可以跳转 -->
                 <el-breadcrumb-item v-for="item in fullPath" :key="item.path" 
-                    :class="item.meta.breadCrumbClick != 'true'?'':'no-redirect-crumb'"
+                    :class="item.meta.breadCrumbClick != 'true'?'no-redirect-crumb':''"
                     :to="{path:dealPath(item)}">
                         {{item.meta.title}}
                 </el-breadcrumb-item>
@@ -19,13 +19,9 @@ export default {
     data() {
         return {
             fullPath:null,
-            home:[{
-                path:'/home',
-                meta:{
-                    title:'首页',
-                    breadCrumb:'true'
-                }
-            }]
+            home:[
+                {...this.$store.state.user.home}
+            ]
         }
     },
     watch: {
@@ -64,7 +60,7 @@ export default {
         dealPath(item) {
             //处理跳转路由的规则
             //只要不让点击跳转，那就返回空路由，点击不会跳转
-            if(item.meta.breadCrumbClick != 'true'){
+            if(!item.meta.breadCrumbClick || item.meta.breadCrumbClick == 'true'){
                 //如果有redirect属性，那肯定是父级菜单，也就是带折叠的菜单，，默认重定向到第一个子菜单，如果不是折叠菜单，那就跳转到自己的path
                 return item.redirect ? item.redirect : item.path
             }else{

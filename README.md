@@ -39,20 +39,20 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     meta对象：定义其他的一些属性
         title（String|必填）：
                 路由的标题，对应菜单中要显示的名字，必填，不填菜单空了，没名字了。
-        isChild（true（有子级菜单|必填）/false（没有子菜单|无要求），也可以用字符串的true,false，判断没用全等）：
+        isChild（String | "true"（有子级菜单|必填）/"false"（没有子菜单|无要求）注意是字符串类型）：
                 判断是否有子级菜单的，children不能作为判断子级菜单的标准，因为当一级菜单跳转时，必须要添加一个children子级路由，并且重定向到
                 该子级路由中，如果当一级菜单只有一个子级路由的时候，都有子级路由，情况重复。不填表示默认没有子级菜单，有子级菜单，必填，推荐有
                 没有都是必填项。
         icon（String）：
                 定义图标名称，目前使用的element的图标库名字，可自行更改，使用其他的方式也可以，添加就会显示图标。
-        hidden（true（显示）/false（不显示），也可以用字符串的true,false，判断没用全等）：
+        hidden（"true"（显示）/"false"（不显示）注意是字符串类型）：
                 当前路由是否需要在菜单中显示，比如404，登录，布局等其他非菜单路由则需要过滤，不加默认显示，如果该路由不需要在菜单中显示，必须
                 加改该属性。父级加了true，子级菜单默认都不显示
-        breadCrumb（true（允许显示）/false（不显示））：
+        breadCrumb（String | "true"（允许显示）/ "false"（不显示）注意是字符串类型）：
                 是否在面包屑中显示，默认显示
-        breadCrumbClick（true（点击可跳转）/false（点击不可跳转））：
+        breadCrumbClick（String | "true"（点击可跳转）/"false"（点击不可跳转）注意是字符串类型）：
                 是否允许面包屑点击，并且跳转路由，添加改属性，面包屑不可点击，点击不会跳转路由，默认可点击
-        keepAlive（true/false）：
+        keepAlive（String | "true"（开启缓存，默认不加就开启）/"false（不缓存该组件）注意是字符串类型）：
                 该组件是否允许keep-alive开启缓存，在默认不加的情况下，系统默认会把打开的菜单缓存，在切换菜单和顶部标签时会缓存该路由，当路由关闭
                 后，再次打开会自动刷新该路由，如果在任何情况下都不缓存该路由，则必填该属性。
 
