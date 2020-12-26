@@ -127,7 +127,6 @@
                     "isChild":"true",
                     "breadCrumb":"true",
                     "hidden":"false",
-                    "breadCrumbClick":"false",
                     "icon":"el-icon-s-tools"
                 },
                 "children":[{

@@ -4,7 +4,7 @@
             <transition-group name="breadcrumb" appear>
                 <!-- 如果有breadCrumbClick并且还等于false，不允许点击跳转路由，比如带有折叠的菜单，点击肯定不可以跳转 -->
                 <el-breadcrumb-item v-for="item in fullPath" :key="item.path" 
-                    :class="item.meta.breadCrumbClick != 'true'?'no-redirect-crumb':''"
+                    :class="item.meta.breadCrumbClick == 'false'?'no-redirect-crumb':''"
                     :to="{path:dealPath(item)}">
                         {{item.meta.title}}
                 </el-breadcrumb-item>
