@@ -3,7 +3,7 @@
       <span>
          Copyright
          <i class="iconC">c</i>
-         vue-sysltem-template 2020 by liyan 347147641@qq.com
+         {{settings.title}} 2020 by liyan 347147641@qq.com
       </span>
       <span>
          other contributor:zhoulei、liushuai
@@ -12,8 +12,13 @@
 </template>
 
 <script>
+import settings from '@/settings.js'
 export default {
-   
+   data() {
+      return {
+         settings,
+      }
+   },
 }
 </script>
 
