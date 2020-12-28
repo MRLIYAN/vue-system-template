@@ -49,7 +49,7 @@
             </a>
         </div>
         <div class="block animate__animated animate__zoomIn">
-            <a target="_blank" href="https://github.com/MRLIYAN/vue-system-template">
+            <a target="_blank" :href="settings.github">
                 <div class="left-icon flex-center">
                     <img src="@/assets/images/home/github.png" alt="">
                 </div>
@@ -60,8 +60,13 @@
 </template>
 
 <script>
+import settings from '@/settings.js'
 export default {
-                                                                                
+    data() {
+        return {
+            settings
+        }
+    },                                                                 
 }
 </script>
 

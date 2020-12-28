@@ -10,5 +10,11 @@ export default {
      *@description 控制面包屑是否显示
     */
     breadCrumb:true,
+
+    /**
+     *@type:String
+     *@description github地址
+    */
+    github:"https://github.com/MRLIYAN/vue-system-template"
     
 }

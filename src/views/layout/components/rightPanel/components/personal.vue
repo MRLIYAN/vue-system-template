@@ -12,7 +12,7 @@
                 <el-dropdown-item icon="el-icon-user">
                     <router-link :to="{path:'/person/personCenter'}" tag="span">个人中心</router-link>
                 </el-dropdown-item>
-                <a href="https://github.com/MRLIYAN/vue-system-template" target="_target" style="text-decoration:none; color:inherit;">
+                <a :href="settings.github" target="_target" style="text-decoration:none; color:inherit;">
                     <el-dropdown-item icon="el-icon-s-platform">Github</el-dropdown-item>
                 </a>
                 <el-dropdown-item icon="el-icon-unlock" @click.native="logoff">退出</el-dropdown-item>
@@ -22,11 +22,13 @@
 </template>
 
 <script>
+import settings from '@/settings.js'
 export default {
     data() {
         return {
             dropStatus:false,
             userName:this.$store.state.user.userInfo.userName,
+            settings,
         }
     },
     
