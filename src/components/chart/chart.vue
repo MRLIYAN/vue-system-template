@@ -14,7 +14,7 @@ export default {
     props: {
         option:{
             type:Object,
-            require:true
+            required:true
         }
     },
     mounted() {
