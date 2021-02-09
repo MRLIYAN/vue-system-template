@@ -38,22 +38,6 @@ Vue.use(VueRouter)
     }
   },
   {
-    path:'/ele',
-    name:'ele',
-    component:layout,
-    redirect:'/ele/eleform',
-    meta:{
-      hidden:"true"
-    },
-    children:[
-      {
-        path:'eleform',
-        name:'eleform',
-        component:()=>import('@/eleform'),
-      }
-    ]
-  },
-  {
     path:'/404',
     name:'404',
     component:()=>import('@/views/404'),
