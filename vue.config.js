@@ -8,9 +8,9 @@ module.exports = {
             } // 别名配置
         }
     },
-    devServer:{    								
+    devServer:{
         open:true,
-        
+
     },
     chainWebpack: config => {
         // 修复HMR

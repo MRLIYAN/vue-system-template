@@ -48,7 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 .tagsMore-container{
-    width:60px; 
+    width:70px;
     height: 50px;
     padding-right: 10px;
     position: absolute;

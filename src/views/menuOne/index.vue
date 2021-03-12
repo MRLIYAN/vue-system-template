@@ -1,12 +1,12 @@
 <template>
-   <div>
-       这是菜单1
-   </div>
+    <div>
+        这是菜单1
+    </div>
 </template>
 
 <script>
 export default {
-   name:"menuOne"
+    name:"menuOne"
 }
 </script>
 
