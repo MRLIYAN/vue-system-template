@@ -23,7 +23,7 @@ export function login(param){
     return request({
         url: 'user.json',
         method: 'get',
-        data:param
+        params:param
     })
 }
 
@@ -32,7 +32,7 @@ export function getUserInfo(token){
     return request({
         url: 'userInfo.json',
         method: 'get',
-        data:{
+        params:{
             token
         }
     })
