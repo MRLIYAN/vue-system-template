@@ -56,5 +56,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
                 该组件是否允许keep-alive开启缓存，在默认不加的情况下，系统默认会把打开的菜单缓存，在切换菜单和顶部标签时会缓存该路由，当路由关闭
                 后，再次打开会自动刷新该路由，如果在任何情况下都不缓存该路由，则必填该属性。
 
+
+# 注意
+## 自适应       
+        该系统用了postcss-px-to-viewport插件进行自适应问题解决，请使用style内写样式，不要用行内样式，会不起作用
+
+
             
 
