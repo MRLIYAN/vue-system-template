@@ -6,7 +6,7 @@ module.exports = {
             unitToConvert: 'px',//(String) 需要转换的单位，默认为"px"
             viewportWidth: 1920, // (Number) 设计稿的视口宽度，一般是750
             unitPrecision: 6, //  (Number) 单位转换后保留的精度（很多时候无法整除）
-            viewportUnit: 'rem', // (String) 希望使用的视口单位
+            viewportUnit: 'vw', // (String) 希望使用的视口单位
             selectorBlackList: ['.ignore', '.hairlines'],
             /*(Array) 需要忽略的CSS选择器，不会转为视口单位，使用原有的px等单位
             如果传入的值为字符串的话，只要选择器中含有传入值就会被匹配
